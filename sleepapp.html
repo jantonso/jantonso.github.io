@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sleepapp.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">SleepApp </h1>
+			  <p id="proj-desc"> Android Application that Analyzes Sleep Behavior</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p> Android application that collects accelerometer data during sleep and accurately detects a range of user movements. Trained a classifier using distributed user data to learn a user's sleep patterns and provide accurate predictions about their future sleep patterns.</p>
+		  <p> This project was completed for the class 18755: Networks in the Real World. </p>
+		  <hr>
+		  <p class="proj-section"> Approach </p>
+		    <p class="section-header"> Data Collection </p>
+			  <p> The user leaves the phone on their bed and the application records accelerometer data during sleep. The accelerometer sensor records five measurements per second: acceleration in the x, y, and z directions. Every minute, the application sends the data for the prior minute to a server running in Google App Engine, where it is stored for processing.</p>
+			<p class="section-header"> Identify and Detect Movements </p>
+			  <p> In order to be able to classify the sleep/wake patterns of a user, we need to be able to identify movement events, i.e. rolling over in bed, sitting up, getting out of bed, etc. </p>
+			  <ol> 
+				<li><p> Gather baseline accelerometer data that corresponds to no movement by the user</p></li>
+				  <ul>
+				    <li><p> The user places his or her phone on the bed and records sessions where they lay still in a number of positions. </p></li>
+				    <li><p> Lying on their left side, right side, stomach, back, and one with the bed empty. </p></li>
+				  </ul>
+				<li><p> Establish threshold accelerometer values for no movement by the user</p></li>
+				  <ul>
+				    <li><p> The derivative of acceleration, for x, y, and z with respect to time, stays within a certain threshold [-b1, +b1] for each of the respective scenarios.</p></li>
+					<li><p> Establish final thresholds for the x, y, and z directions by choosing the absolute minimum -b1 and maximum b1 across all 5 positions for each direction. 
+
+				  </ul>
+				<li><p> Calculate movement events </p></li>
+			      <ul>
+				    <li><p> A Movement Event is defined as when one of the acceleration derivative readings exceeds the threshold values established in the previous step. So, for example if x acc derivative at a time step is 0.15 and the threshold for the x direction was [-0.08, 0.08], then it is a movement event.</p></li>
+				    <p> The following figures show the x, y, and z acceleration derivative readings for a session where a user gets into bed, lays still for aproximately 10 seconds, and then gets out of bed. As you can see, when the user is laying still the acceleration derivative readings remain fairly consistent and within a certain threshold. When the user gets into or out of bed, the acceleration derivative readings exceed that threshold. </p>
+					<div class="row project-images middle-images">
+					  <div class="col-md-4 left-images">
+						<img class="img-responsive" src="content/sleepapp/xd.png" alt=""> 
+					  </div>
+					  <div class="col-md-4 mid-images">
+						<img class="img-responsive" src="content/sleepapp/yd.png" alt="">
+				      </div>
+					  <div class="col-md-4 right-images">
+						<img class="img-responsive" src="content/sleepapp/zd.png" alt="">
+				      </div>
+					</div>
+					<li><p> For each 2 second window, the number of movement events is defined as the Movement Weight. </p></li>
+				    <li><p> Normalize the Movement Weight of each 2 second window by dividing by the maximum Movement Weight of all the 2 second windows.</p></li> 
+					<li><p> Remove 2 second windows where normalized Movement Weight is less than 0.20, as these correspond to subtle movements that do not affect sleep.</p></li>
+				  </ul>
+				<li><p> Find clusters of movement </p></li>
+				  <ul>
+					<li><p> Identify 20 second periods with multiple non-zero Movement Weights.</p></li>
+				    <li><p> If there are two or more non-zero 2 second Movement Weights within a 20 second period, then I assign each 2 second window in that period to have the local maximum Movement Weight for that 20 second period. </p></li>
+				  </ul>
+			  </ol> 
+			<p class="section-header"> Classify the Sleep </p>
+			  <p> I attempt to label each of the 20-minute time bins of Movement Weights for a night of sleep as "restless", "asleep", or "woke up".</p>
+			  <p> I trained a classifier using a training set of data (one week of sleep) where the users labeled each night of sleep manually. Since each 20-minute time bin has 600 Movement Weight data points, I first need to compress this into a more manageable sized number of features: a 4-tuple consisting of defining metrics. The four metrics are the mean of the Movement Weights, the maximum Movement Weight, the number of non-zero Movement Weights, and the length of the biggest consecutive block of non-zero Movement Weights, all of which are normalized. My classifier uses support vector machines (SVM). </p>
+			  <p> I use the trained classifier to label each 20-minute time bin as "restless", "woke up", or "asleep" in order to give the user a better understanding of their sleep/wake pattern. </p>
+			  <div class="row project-images middle-images">
+				<div class="col-md-6 left-images">
+				  <img class="img-responsive" src="content/sleepapp/m1.png" alt="">
+				</div>	
+				<div class="col-md-6 right-images">			
+				  <img class="img-responsive" src="content/sleepapp/m2.png" alt="">
+				</div>
+			  </div>
+			<p class="section-header"> Predict Future Sleep/Wake Patterns </p>
+			  <p> I aggregate the data from each of the user's previous nights of sleep. For each of the labeled 20-minute time bins, I assign a weight of 0.0 if it was labeled as "asleep", 0.5 if it was labeled as "restless", and 4.0 if it was labeled as "woke up". Then, I calculate a Predicted Movement Value for each 20-minute index i, i.e. index 0 is the first 20 minutes of sleep, index 1 is the second 20 minutes of sleep, and so on. The Predicted Movement Value for index i is the sum of the weights of the i-th 20-minute time bins divided by the number of i-th 20-minute time bins across each night of sleep. </p>
+			  <p> I display the predicted Movement Value for each 20-minute index i to the user, which presents a good representation of their typical sleep/wake behavior and, intuitively, a good prediction of their future sleep/wake pattern.
+			<img class="img-responsive project-images" src="content/sleepapp/predictions1.png" alt="">
+			<img class="img-responsive project-images" src="content/sleepapp/predictions2.p
+ng" alt="">
+			<img class="img-responsive project-images" src="content/sleepapp/predictions3.p
+ng" alt="">
+		  <hr>
+		  <p class="proj-section"> Experimental Setup and Results </p> 
+			<p> I collected data using the application myself and for five other users. Data was collected from a total of 31 nights of sleep. </p>
+			<p> I had each of the six users record five 10-second baseline sessions, where they lay still on their bed in each position: on left side, on right side, on back, on stomach, and with an empty bed. From this, I established the threshold ranges for x, y, and z acceleration derviatives and tested the accuracy of my approach for identifying movement events. </p>
+			<p> The following figures show my attempt at detecting a user movement of rolling over from their left side to their right side. The left figure displays the x, y, and z acc derivatives with respect to time and you will notice the distinct spike that corresponds to the user's movement. The middle figure shows my algorithm's attempt to identify the Movement Weights for each 2-second window of this session. The right figure shows these two overlayed on top of one another, with absolute acceleration derivative values,  and you can see that I succesfully detect the movement event.</p>
+			<div class="row project-images middle-images">
+              <div class="col-md-4 left-images">
+                <img class="img-responsive" src="content/sleepapp/movement_left.png" alt="">
+              </div>
+			  <div class="col-md-4 mid-images">
+			    <img class="img-responsive" src="content/sleepapp/movement_mid.png" alt="">
+			  </div>
+			  <div class="col-md-4 right-images">
+				<img class="img-responsive" src="content/sleepapp/movement_right.png" alt="">
+			  </div>
+            </div>
+			<p> Out of 24 single movement sessions, my approach correctly identified 22 movements for an overall accuracy of 91.66% and did not report any false movements. </p>
+			<p> There is a total of 670 20-minute time bins of Movement Weights from all six users comprising 32 nights worth of sleep. The training set consists of a total of 19 nights worth of data and 390 20-minute time bins. The testing set consists of a total of 13 nights worth of data and 280 20-minute time bins. Using the SVM classifier, I achieved a precision score of 0.82, a recall score of 0.84, and a f1-score of 0.82 when classifying the 20-minute time bins as "asleep", "restless", or "woke up". </p>	
+		  <hr>
+		  <p class="proj-section"> Conclusion and Lessons Learned </p>
+		    <p> The SVM classifier was much more accurate in classifying "asleep" labels, than it was in classifying "restless" or "woke up" labels. I believe this is because it has a hard time distinguishing between "restless" and "woke up" labels, as there is not a significant enough difference in the respective movements.</p>
+		    <p> In the future, I belive my classification could be improved by training a classifier to predict between two labels, "asleep" or "not asleep". From this, we could then label each first "not asleep" label as "woke up" and any preceding "not asleep" labels as "restless" in a consecutive block of "not asleep" labels. </p>
+		  <hr>
+		  <p class="proj-section"> Project Timeline </p>
+			<p> This project was completed via a series of two week sprints (milestones): M1, M2, M3, M4. For each milestone, I added work towards a research paper (which grew from 2 to 8 pages) and presented my work to the class/public. </p>
+			<p> M1: <a href="content/sleepapp/jantonso_m1.pdf">paper</a> (2 pages) and presentation <a href="content/sleepapp/jantonso_m1_slides.pdf">slides</a>. </p>
+			<p> M2: presentation <a href="content/sleepapp/jantonso_m2_slides.pdf">slides</a>. </p>
+			<p> M3: <a href="content/sleepapp/jantonso_m3.pdf">paper</a> (6 pages). </p>
+			<p> M4: <a href="content/sleepapp/jantonso_m4.pdf">paper</a> (8 pages) and final presentation <a href="content/sleepapp/18755_poster_jantonso.pdf">poster</a>. </p>
+		  <hr>
+		  <p class="proj-section"> More Information </p>	
+		    <a href="https://github.com/jantonso/SleepApp"><p> Github </p></a>
+			<a href="http://www.freepik.com/free-photos-vectors/house"><p>Homepage image designed by Freepik</p></a>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>

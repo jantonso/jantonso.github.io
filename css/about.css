@@ -1,0 +1,71 @@
+body {
+	background-color: #D1E8DA;
+	padding-top: 120px;
+}
+
+#nav-container {
+	height: 12%;
+	background-color: #04262F;
+	padding-top: 14px;
+	border: 0 none;	
+}
+
+#nav-container #name {
+	color: #43CC94;
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	padding-left: 0;
+}
+
+#nav-container li a {
+	color: #43CC94;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+#nav-container li a:hover {
+	color: #FFFFFF;
+	background-color: #04262F;
+}
+
+.portfolio-item {
+	margin-bottom: 25px;
+}
+
+.portfolio-item p {
+	font-color: #FFFFFF;
+}
+
+#name {
+	margin: 0px;
+	color: #43CC94;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+#contact_info {
+	color: #43CC94;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+	margin: 0;
+}
+
+.ci {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+hr {
+	background-color: #43CC94;
+	color: #43CC94; 
+	height: 2px;
+	border: 0 none;
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}

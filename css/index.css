@@ -1,0 +1,70 @@
+body {
+	background-color: #D1E8DA;
+	padding-top: 120px;
+}
+
+#nav-container {
+	height: 12%;
+	background-color: #04262F;
+	padding-top: 14px;
+	border: 0 none;
+}
+
+#nav-container #name {
+	color: #43CC94;
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+}
+
+#nav-container li a {
+	color: #43CC94;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+#nav-container li a:hover {
+	color: #FFFFFF;
+	background-color: #04262F;
+}
+
+.portfolio-item {
+	margin-bottom: 25px;
+}
+
+
+.portfolio-item figure {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.portfolio-item figcaption {
+	color: white;
+	display: table;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	padding-top: 90px;
+}
+
+.portfolio-item figcaption p {
+	text-align: center;
+	color: #04262F;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.portfolio-item:hover figcaption {
+	opacity: 1;
+}
+
+.portfolio-item:hover img {
+	opacity: 0.25;
+}

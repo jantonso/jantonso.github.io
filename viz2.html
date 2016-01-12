@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/viz2.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">Visualization: What and Where do Foreign Students Study? </h1>
+			  <p id="proj-desc"> Visualizes where foreign students study in the United States and what they choose to study.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p> Using two data sets from Open Doors Data provided by the Institute of International Education, I built an interactive map to explore where foreign students choose to study in the United States and responsive percentage charts to display their chosen fields of study.</p>
+		  <p> This project was completed for the class 05839: The Data Pipeline: Collecting and Using Data for Interactive Systems and can be found <a href="http://quantum-keep-88520.appspot.com/visualization3/">here</a> and <a href="http://quantum-keep-88520.appspot.com/visualization2/">here</a>. </p>
+		  <hr>
+		  <p class="proj-section"> Project Description </p>
+			<p> The first data set consisted of the number of international students by state and per year from 2010 to 2015.</p>
+			<p> I created a heat map of the United States where the color for a given state increases from beige to black depending on the number of foreign students in that state. </p>
+			<ul>
+			  <li><p> You can hover over a state to view the number of foreign students in that state. </p></li>
+			  <li><p> You can choose the year using the buttons on the right. </p></li>
+			</ul>
+			<img class="img-responsive project-images" src="content/viz2/map1.png" alt="">
+            <img class="img-responsive project-images middle-images" src="content/viz2/map2.png" alt="">
+		    <p> The second data set consisted of the fields of study, in percentages and by place of origin, for foreign students studying in the United States from 2009 to 2014.</p>
+            <p> For each country, I created a percentage line from 0% to 100% and placed a point on that line for each major that corresponds to the percentage of students from that country studying the given major.</p>
+            <ul>
+              <li><p> You can hover over a point to view its specific percentage. </p></li>
+			  <li><p> You can choose the year using the buttons on the right. </p></li>           
+		      <li><p> You can focus on a specific major using the buttons on the right. </p></li>
+		    </ul>
+            <img class="img-responsive project-images" src="content/viz2/pct1.png" alt="">
+            <img class="img-responsive project-images" src="content/viz2/pct2.png" alt="">
+		    <img class="img-responsive project-images" src="content/viz2/pct3.png" alt="">
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+		    <p> The site is hosted on Google App Engine and the heat map was made using D3.js and open source javascript <a href="http://bl.ocks.org/NPashaP/raw/a74faf20b492ad377312/3513ad985b2fa93ea35f2fc864cb30540c298171/uStates.js">code</a>.</p>
+			<p> The percentage charts visualization was made using D3.js. </p>
+		    <a href="https://github.com/jantonso/05-839"><p> Github </p></a>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>

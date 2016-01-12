@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/pacemate.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name"> PaceMate </h1>
+			  <p id="proj-desc"> Dynamic Pacing Assistance for Athletes </p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p> PaceMate is an intuitive and visual pacing system that updates in real-time according to an athlete's target and current pace.</p>
+		  <p> This project was completed for the class 18848D: Special Topics in Embedded Systems: Sports Technology and then continued in Fall 2015 as an independent research project. </p>
+		  <hr>
+		  <p class="proj-section"> Motivation </p>
+		    <p> Pace maintenance is one of the most important components of an athlete's training and estimating pace is difficult for athletes. Currently, athletes are dependent on mechanisms that either break their stride, are not providing continous feedback, or are simply not accurate enough.</p>
+			<p> PaceMate solves this problem by providing constant visual pacing feedback for athletes. It is highly adaptive to an individual athlete's workout needs and can be modified to fit a range of different workouts. A user simply enters his or her target workout and goal pace, and the PaceMate system of LEDs guide the user to hit the target pace.</p>
+		  <hr>
+		  <p class="proj-section"> Initial Prototype </p>
+			<p> We decided to focus on an athlete running on a track for our initial prototype of the system. We built a 50m prototype instead of a 400m prototype due to time and budget constraints, but the system is fully extensible by chaining 50m sgements together to achieve the target distance. </p>
+		  <hr>
+		  <p class="proj-section"> System Architecture </p>
+			<p> The PaceMate system consists of four key components:</p> 
+			<ol>
+              <li> <p> Physical Pacing System (50m) </p></li>
+                <ul>
+                  <li> <p> Arduino Yun Microcontroller </p></li>
+                  <li> <p> 38 programmable RGB LEDs </p> </li>
+                  <li> <p> Sonar Sensor to record splits</p></li>
+				  <li> <p> Vinyl Fabric Casing (50m) </p</li>
+				</ul>
+              <li> <p> Android Application </p></li>
+                <ul>
+                  <li><p> User can create a new workout </p></li>
+				  <li><p> User can start/stop the workout <p></li>
+				  <li><p> User can view his or her past workouts </p></p>
+				</ul>
+			  <li> <p> Web Application </p></li>
+				<ul>
+				  <li><p> User can create an account </p></li>
+				  <li><p> User can create a new workout entry through a form on the website </p></li>
+				  <li><p> User can view his or her past workouts</p></li>
+				  <li><p> REST API for Android to create a new workout entry and for Arduino to record split distances/times for a workout entry </p></li>
+				</ul> 
+			  <li> <p> MongoDB Database </p></li>
+            </ol>
+		    <img class="img-responsive project-images" src="content/pacemate/track1.png" alt="">
+			<img class="img-responsive project-images" src="content/pacemate/architecture1.png" alt="">
+		  <hr>
+		  <p class="proj-section"> Physical Pacing System </p>
+			<p> The pacing system consists of 38 programmable RGB LEDs connected in series, spaced out approximately every meter, and controlled by an Arduino Yun microcontroller. We decided to use the Arduino Yun because it has built in WiFi capabilities. We use a sonar sensor to detect user movement in order to record split times. </p>
+			<p> Essentially, the pacing system is one 50m strip of LEDs with the Arduino Yun microcontroller and the sonar sensor at the start (0m). The entire strip is encased in a vinyl fabric casing to protect the wiring of the system and the LEDs. </p>
+			<img class="img-responsive project-images middle-images" src="content/pacemate/architecture2.png" alt=""> 
+			<p> The Arduino Yun controls the system based on a series of states:</p>
+			<ol>
+			  <li><p> State 0: System Initialization</p></li>
+				<ul>
+				  <li><p> Initializes all 38 LEDs to a default color (red).</p></li>
+				  <li><p> Arduino Yun initializes WiFi capabilities. </p></li>
+				  <li><p> Calibrates sonar sensor to account for current lighting conditions and angle of sensor. </p> </li>
+				</ul>
+			  <li><p> State 1: Waits for setup workout command</p></li>
+				<ul>
+				  <li><p> Receives command w/ target pace, target distance, and workout_id information from Android app.</p></li>
+				  <li><p> Calculates iteration time per LED based on target pace.</p></li>
+				  <li><p> Initializes timing constructs for 50m iterations of system.</p></li>
+				</ul>
+			  <li><p> State 2: Waits for start command </p></li>
+			    <ul>
+				  <li><p> Upon recieving command, starts pacing system of LEDs and sonar sensor to detect user movement. </p></li>
+				</ul>
+			  <li><p> State 3: System paces the user</p></li>
+				<ul>
+				  <li><p> Lights up one LED (red to green) to guide the user at the correct pace based on calculated iteration time per LED.</p></li>
+				  <li><p> Records splits every 50m using sonar sensor.</p></li>
+			      <li><p> System runs until user has hit the target distance or it receives stop command via Android app.</p></li>
+				  <li><p> Sends split times and distances to Web Application upon completion and moves back to State 1.</p></li>
+				</ul>
+			</ol>
+		  <hr>
+		  <p class="proj-section"> Android Application </p>
+			<p> The Home Page of the application allows users to create a new workout or to view their past workouts. </p>
+			<ol>
+			  <li><p> Creating a new workout </p></li>
+			  <ul>
+			    <li><p> User specifies coach, athlete, description of workout, target distance, and target pace. </p></li>
+			    <li><p> POST request to Web Application returns with a workout_id. </p></li>
+			    <li><p> Upon receiving workout_id, sends workout_id, target pace, and target distance to Arduino Yun. </p></li>
+		        <li><p> Redirects user to Workout Page. </p></li>
+	     	  </ul>
+			  <li><p> Viewing past workouts </p></li>
+			  <ul>
+				<li><p> Open Web Application in the browser. </p></li>
+			  </ul>
+		    </ol>
+			<p> The Workout Page displays information about the current workout, allows the user to start/stop the workout, and lets them view their past workouts. </p>
+			<p> FOTOS OF APP </p>
+		  <hr>
+		  <p class="proj-section"> Web Application </p>
+			<p> Users can create an account consisting of a username and password. They can view their past workouts via a dashboard on the homepage, which displays any workout that the user account was associated with (either as a coach or an athlete). Users can create a new workout entry via a form on the new workout page. </p>
+			<p> The Web Application has a REST API for the Android app to create a new workout entry and for the Arduino Yun to record split distances/times for an existing workout. </p>
+		  <hr>
+		  <p class="proj-section"> MongoDB Database </p>
+			<p> The database stores User account information and workout entries.</p> 
+			<p> We have a passively replicated database in AWS with one Primary Node, and two Backup Nodes in a MongoDB replica set to ensure redundancy and increase data availability. The Primary Node records all changes in an operation log. The Backup Nodes replicate this operation log asynchronously and apply data operations to ensure that they match the Primary Node. </p>
+            <p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
+            <div class="row project-images">
+              <div class="col-md-4 left-images">
+                <img class="img-responsive" src="content/pacemate/db1.png" alt="">
+              </div>
+              <div class="col-md-4 mid-images">
+                <img class="img-responsive" src="content/pacemate/db2.png" alt="">
+              </div>
+              <div class="col-md-4 right-images">
+                <img class="img-responsive" src="content/pacemate/db3.png" alt="">
+              </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+			<p> We are not currently running the Web Application or DB on AWS during development due to costs. </p>
+			<p> <a href="https://github.com/jantonso/PaceMate"> Github</a></p>
+			<p> Homepage image taken from <a href="http://www.freepik.com">here</a>.</p> 
+<!--		  <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow'); return false;"> yolo</a>-->
+		  <hr>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>

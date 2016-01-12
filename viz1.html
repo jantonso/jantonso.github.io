@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/viz1.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">Visualization: Measuring Immigration </h1>
+			  <p id="proj-desc"> Visualizes the impact of immigrants in the United States. Who are they? What do they do? What is their impact?</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p> Using a data set scraped from Wikipedia's curated list of famous personalities in the U.S. with foreign descent, we built a parallel coordinates graph and linked data table which supports filtering and allows rapid exploration of the impact of immigrants in the United States.</p>
+		  <p> This project was completed for the class 05839: The Data Pipeline: Collecting and Using Data for Interactive Systems and can be found <a href="http://root-arcanum-92800.appspot.com/">here</a>. </p>
+		  <hr>
+		  <p class="proj-section"> Project Description </p>
+		    <p> Our data set consisted of key features about important individuals from a variety of countries. For each individual, we extracted the following key features: Source Country, Name, Field of Influence, and Description. We categorized individuals as First Generation or Second Generation or Higher using a Naive Bayes classifier. We calculated the feature Influence Score as the length of the person's Wikipedia page.</p>
+			<p> List of countries and respective number of individuals:</p>
+			<ol>
+			  <li><p>Taiwan: 21 </p></li>
+              <li><p>Vietnam: 86 </p></li>
+              <li><p>South Korea: 280 </p></li>
+              <li><p>Japan: 321 </p></li>
+              <li><p>India: 527 </p></li>
+              <li><p>China: 424 </p></li>
+              <li><p>France: 567 </p></li>
+              <li><p>Germany: 1097 </p></li>
+              <li><p>Norway: 500 </p></li>
+              <li><p>Greece: 464 </p></li>
+              <li><p>Spain: 272 </p></li>
+              <li><p>Mexico: 742 </p></li>
+              <li><p>Cuba: 352 </p></li>
+              <li><p>Iran: 198 </p></li>
+			</ol>
+			<p> We decided that a parallel coordinates chart was the best way to visualize the information. Each line in the chart corresponds to an individual. This allows you to quickly view both trends and outliers in the data.</p>
+			<ul>
+			  <li><p> You can filter by Source Country, Field of Influence, Generation, and Influence Score by filtering along one of the four vertical axis. </p></li>
+			  <li><p> You can choose the region (Europe, Asia, Other) using the buttons on the right. </p></li>
+			</ul>
+			<p> We linked the data table in the lower portion of the visualization to the parallel coordinates chart to update its display after filtering in real-time. 
+		    <ul>
+			  <li><p>Individuals are sorted decreasingly based on Influence Score and by Country.</p></li>
+			  <li><p> Clicking on an individual entry redirects you to his or her Wikipedia page.</p></li>
+			  <li><p> Hovering on an individual entry highlights that individual in the parallel coordinates chart.</p></li>
+			</ul>
+            <img class="img-responsive project-images" src="content/viz1/imm1.png" alt="">
+			<img class="img-responsive project-images" src="content/viz1/imm2.png" alt="">
+            <img class="img-responsive project-images" src="content/viz1/imm3.png" alt="">
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+		    <p> The site is hosted on Google App Engine and the visualization was made using D3.js </p>
+		    <a href="https://github.com/jantonso/05-839"><p> Github </p></a>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>

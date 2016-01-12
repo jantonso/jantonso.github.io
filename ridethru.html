@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ridethru.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">RideThru </h1>
+			  <p id="proj-desc"> Virtual Reality Stationary Bike </p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p> RideThru transforms a dull stationary bike workout into a virtual reality experience that makes exercising fun. Combining sensors, a spin bike, and an Oculus Rift, a user can experience virtual terrains and live video game action all while working out. </p> 
+		  <p> This project was completed for the class 18549: Embedded Systems Design Capstone. </p>
+		  <div class="videoWrapper">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/8m8dJ_gGtGw" frameborder="0" allowfullscreen></iframe>
+		  </div>
+		  <hr>
+		  <p class="proj-section"> Motivation </p>
+		    <p> Stationary bikes are a very popular indoor exercise choice. Many people prefer outdoor biking, but due to weather, busy schedules, or other reasons, staionary bike exercises become the next best workout. The predominant issue with stationary bikes is that they are extremely boring since you do not actually move anywhere. </p>
+		    <p> If people don't enjoy working out, they are less likely to continue working out. RideThru makes stationary biking fun and allows users to play games or ride through new terrains in virtual reality. Ultimately, this encourages people to stay healthy and active as much as possible. </p>
+		  <hr>
+		  <p class="proj-section"> Project Proposal </p>
+		    <p> The first step was to create a written proposal which defined our necessary specs, project requirements, architecture, and parts list. </p> 
+		    <p> The proposal document can be found <a href="content/ridethru/DesignProposal.pdf">here</a> and has been updated to include lessons learned.</p>
+		  <hr>
+		  <p class="proj-section"> Architecture </p>
+		    <p> Our final architecture consisted of two major components: </p>
+		    <ol> 
+			  <li> <p>The physical sensors and PCB on the stationary bike </p></li>
+		      <ul>
+			    <li> <p>Reed Switch Sensor to calculate user RPM </p></li>
+			    <li> <p>PS2 Handlebars to allow user to turn and use in-game buttons</p> </li>
+			    <li> <p>DC Variable-Speed Fan that responds to in-game actions </p></li>
+			    <li> <p>Microcontroller (PCB) handles communcation b/w hardware components and game</p></li> 
+		      </ul>
+			  <li> <p>The virtual reality experience using Unity3D and the Oculus Rift </p></li>
+			  <ul>
+			    <li> <p>Processing application that acts as driver to enable communication between PCB and Unity3D</li>
+			    <li> <p>Unity3D: Mario Kart style racing game</p></li>
+			    <li> <p>Oculus Rift to render an immersive 3D experience </p></li>
+			  </ul>
+		    </ol>
+		  <img class="img-responsive project-images" src="content/ridethru/architecture.jpg" alt="">
+		  <hr>
+		  <p class="proj-section"> RPM Sensor</p>
+		    <p> In order to determine the user's RPM (Rotations per Minute), we placed a reed switch sensor on the bike frame and a small magnet on the wheel. The switch in the sensor is normally open (0), but when the magnetic field is present the switch is closed (1). We implemented AVR code to detect this via interrupt handling and to calculate user RPM every 5 seconds. </p>
+		    <div class="row project-images">
+              <div class="col-md-7 left-images">
+                <img class="img-responsive" src="content/ridethru/rpm1.jpg" alt="">
+              </div>
+              <div class="col-md-5 right-images">
+              	<video controls>
+				  <source src="content/ridethru/rpm2.ogv" type="video/ogg">
+				  <source src="content/ridethru/rpm2.mov" type="video/mov">
+				  Your browser does not support the video tag.
+				</video>
+			  </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> PS2 Handlebars </p>
+		    <p> We mounted a PS2 Yamaha controller onto our stationary bike. We seperated the wires in the traditional tubing and attached them to pins on our PCB. Building from an <a href="https://github.com/madsci1016/Arduino-PS2X">open source library</a> for controlling PS2 controllers via an arduino, we developed code for reading controls and commands from the Yamaha controller. </p> 
+			<div class="row project-images">
+              <div class="col-md-6 left-images">
+				<img class="img-responsive" src="content/ridethru/ps2-wiring3.jpg" alt="">
+                <img class="img-responsive bot-images" src="content/ridethru/ps2-wiring1.jpg" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/ridethru/ps2-wiring2.jpg" alt="">
+				<img class="img-responsive bot-images" src="content/ridethru/ps2-wiring4.jpg" alt="">          
+			  </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> DC Variable-Speed Fan </p>
+		    <p> In order to create a fully immersive user experience, we developed a fan which responds to the user's RPM in real-time. The faster the user pedals, the harder the fan blows. We built a laser cut mount for the fan to ensure user safety and implemented the functionality to control fan speed via PWM (Pulse width modulation). </p>
+			<div class="row project-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/ridethru/fan1.jpg" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/ridethru/fan2.jpg" alt="">
+              </div>
+            </div>            
+          <hr>
+		  <p class="proj-section"> Microcontroller (PCB) </p>
+		    <p> After researching the necessary schematics that we would need to run all of our sensors, we began designing the PCB. We went through many iterations of the design and settled on a schematic that included all of our required features plus the ability to add motor-controlled bike resistance in the future. The PCB design was done using CadSoft EAGLE PCB Design Software. Finally, we soldered all of the necessary components onto the PCB and connected it to our 3 sensors on the bike.</p>
+            <div class="row project-images">
+			  <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/ridethru/pcb1.jpg" alt="">
+              </div>
+			  <div class="col-md-6 right-images">
+			    <img class="img-responsive" src="content/ridethru/pcb2.jpg" alt="">
+			  </div>
+			</div>
+		  <hr>
+		  <p class="proj-section"> Processing + Unity3D </p>
+		    <p> For the game development side of the project, we designed our game using Unity combined with OculusUnityIntegration. Initially, we built a racing game using a traditional car, but during user testing we discovered that the physics behind a traditional car in Unity made it very hard to control. </p>
+			<img class="img-responsive project-images unity1" src="content/ridethru/unity1.jpg" alt="">
+		    <p> We found that using a kart style physics engine and movement was much more natural to the bike and Yamaha controller style of turning. Finally, we combined the kart style racing game with a more realistic environment to create an immersive experience for the users.</p>
+		    <div class="row project-images">
+			  <div class="col-md-6 left-images unity1">
+				<video controls muted="muted">
+				   <source src="content/ridethru/testtrackworking.ogv" type="video/ogg">
+				   <source src="content/ridethru/testtrackworking.mp4" type="video/mp4">
+				   Your browser does not support the video tag.
+				</video>
+			  </div>
+			  <div class="col-md-6 right-images unity1">
+				<video controls muted="muted">
+				   <source src="content/ridethru/demodaylove.mp4" type="video/mp4">
+				   <source src="content/ridethru/demodaylove.ogv" type="video/ogg">
+				   Your browser does not support the video tag.
+				</video>
+			  </div>
+			</div>
+			<p> We handled communication with the PCB by building an application in Processing that would allow our Unity game to communicate with the PCB over serial communication. This driver mimics keyboard presses which allows our stationary bike to work for any game in Unity.
+          <hr>
+		  <p class="proj-section"> Putting it all together </p>
+		    <div class="row project-images">
+			  <div class="col-md-6 left-images">
+				<img class="img-responsive" src="content/ridethru/final1.jpg" alt="">	
+			  </div>
+			  <div class="col-md-6 right-images">
+				<img class="img-responsive" src="content/ridethru/final3.jpg" alt="">
+			  </div>
+			</div>
+			<img class="img-responsive bot-images" src="content/ridethru/final2.jpg" alt="">
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+	        <div class="row">
+			  <div class="col-md-12">
+				<a class="pull-left" href="http://www.ece.cmu.edu/~ece549/spring15/team02/website/RideThru/"><p>Website</p></a>
+				<a class="pull-left" id="github" href="https://github.com/jantonso/RideThru"><p>Github</p></a>
+			  </div>
+			</div>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>
