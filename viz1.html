@@ -7,17 +7,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/viz1.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <!-- Navbar -->
+	<!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
       <div class="container">
-        <div class="navbar-header page-scroll">
-          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" id="name" href="#page-top"> Joshua Antonson </a>
         </div>
-        <div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="page-scroll"><a href="about.html">About</a></li>
             <li class="page-scroll"><a href="index.html">Projects</a></li>
@@ -28,7 +32,7 @@
     </nav>
 
 	<!-- Intro Header -->
-	<header class="intro">
+	<header class="intro" id="page-content">
 	  <div class="intro-body">
 		<div class="container">
 		  <div class="row">

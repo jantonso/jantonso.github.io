@@ -7,17 +7,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/ridethru.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <!-- Navbar -->
+	<!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
       <div class="container">
-        <div class="navbar-header page-scroll">
-          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" id="name" href="#page-top"> Joshua Antonson </a>
         </div>
-        <div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="page-scroll"><a href="about.html">About</a></li>
             <li class="page-scroll"><a href="index.html">Projects</a></li>
@@ -25,10 +29,10 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>	
 
 	<!-- Intro Header -->
-	<header class="intro">
+	<header class="intro" id="page-content">
 	  <div class="intro-body">
 		<div class="container">
 		  <div class="row">
@@ -130,17 +134,17 @@
 		  <hr>
 		  <p class="proj-section"> Processing + Unity3D </p>
 		    <p> For the game development side of the project, we designed our game using Unity combined with OculusUnityIntegration. Initially, we built a racing game using a traditional car, but during user testing we discovered that the physics behind a traditional car in Unity made it very hard to control. </p>
-			<img class="img-responsive project-images unity1" src="content/ridethru/unity1.jpg" alt="">
+			<img class="img-responsive project-images middle-images" src="content/ridethru/unity1.jpg" alt="">
 		    <p> We found that using a kart style physics engine and movement was much more natural to the bike and Yamaha controller style of turning. Finally, we combined the kart style racing game with a more realistic environment to create an immersive experience for the users.</p>
-		    <div class="row project-images">
-			  <div class="col-md-6 left-images unity1">
+		    <div class="row project-images middle-images">
+			  <div class="col-md-6 left-images">
 				<video controls muted="muted">
 				   <source src="content/ridethru/testtrackworking.ogv" type="video/ogg">
 				   <source src="content/ridethru/testtrackworking.mp4" type="video/mp4">
 				   Your browser does not support the video tag.
 				</video>
 			  </div>
-			  <div class="col-md-6 right-images unity1">
+			  <div class="col-md-6 right-images">
 				<video controls muted="muted">
 				   <source src="content/ridethru/demodaylove.mp4" type="video/mp4">
 				   <source src="content/ridethru/demodaylove.ogv" type="video/ogg">

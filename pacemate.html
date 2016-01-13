@@ -7,17 +7,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/pacemate.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <!-- Navbar -->
+	<!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
       <div class="container">
-        <div class="navbar-header page-scroll">
-          <a class="navbar-brand" id="name" href="#page-top"> Joshua Antonson </a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" id="name" href="#page-top"> Joshua Antonson </a>
         </div>
-        <div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="page-scroll"><a href="about.html">About</a></li>
             <li class="page-scroll"><a href="index.html">Projects</a></li>
@@ -28,7 +32,7 @@
     </nav>
 
 	<!-- Intro Header -->
-	<header class="intro">
+	<header class="intro" id="page-content">
 	  <div class="intro-body">
 		<div class="container">
 		  <div class="row">
@@ -130,7 +134,6 @@
 			  </ul>
 		    </ol>
 			<p> The Workout Page displays information about the current workout, allows the user to start/stop the workout, and lets them view their past workouts. </p>
-			<p> FOTOS OF APP </p>
 		  <hr>
 		  <p class="proj-section"> Web Application </p>
 			<p> Users can create an account consisting of a username and password. They can view their past workouts via a dashboard on the homepage, which displays any workout that the user account was associated with (either as a coach or an athlete). Users can create a new workout entry via a form on the new workout page. </p>
@@ -157,7 +160,6 @@
 			<p> <a href="https://github.com/jantonso/PaceMate"> Github</a></p>
 			<p> Homepage image taken from <a href="http://www.freepik.com">here</a>.</p> 
 <!--		  <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow'); return false;"> yolo</a>-->
-		  <hr>
 		</div>
 	  </div>
     </div>   
