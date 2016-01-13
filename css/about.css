@@ -84,12 +84,12 @@ p {
 
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
-	#intro-name {margin-top: 10px;}
+	#intro-name {margin-top: 15px;}
 }
 
 @media (min-width:481px) {
     #nav-container #name {font-size: 1.75em;}
-	#intro-name {margin-top: 10px;}
+	#intro-name {margin-top: 15px;}
 }
 
 @media (min-width:641px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
