@@ -1,6 +1,26 @@
-body {
-	background-color: #D1E8DA;
-	padding-top: 120px;
+@media all and (max-width: 768px) {
+	body {
+		background-color: #D1E8DA;
+		padding-top: 120px;
+		font-size: 6px;
+	}
+}
+
+
+@media all and (min-width: 769px) and (max-width: 1119px) {
+	body {
+        background-color: #D1E8DA;
+        padding-top: 120px;
+        font-size: 10px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    body {
+        background-color: #D1E8DA;
+        padding-top: 120px;
+        font-size: 14px;
+    }
 }
 
 #nav-container {
@@ -12,7 +32,7 @@ body {
 
 #nav-container #name {
 	color: #43CC94;
-	font-size: 30px;
+	font-size: 2.5em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	padding-left: 0;
@@ -20,7 +40,7 @@ body {
 
 #nav-container li a {
 	color: #43CC94;
-	font-size: 16px;
+	font-size: 1.2em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 }
@@ -41,7 +61,7 @@ body {
 #name {
 	margin: 0px;
 	color: #43CC94;
-    font-size: 24px;
+    font-size: 1.7em;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
@@ -49,13 +69,13 @@ body {
 #contact_info {
 	color: #43CC94;
     font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 	margin: 0;
+	font-size: 1.25em;
 }
 
 .ci {
-	margin-top: 4px;
-	margin-bottom: 0;
+	margin: 4px 0px 0px 0px;
 }
 
 hr {
