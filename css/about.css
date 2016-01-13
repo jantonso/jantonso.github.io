@@ -4,42 +4,12 @@ body {
 	font-size: 14px;
 }
 
-@media (min-width: 320px) {
-	#nav-container #name {
-		font-size: 1.5em;
-	}
-	#nav-container li {
-		padding: 0;
-		margin: 0;
-		font-size: 0.7em;
-		width: 0.8em;
-		float: left;
-	}
-}
-
-@media (min-width: 480px) {
-    #nav-container #name {
-        font-size: 1.75em;
-    }
-}
-
-@media (min-width: 768px) {
-    #nav-container #name {
-        font-size: 2.0em;
-    }
-}
-
-@media (min-width: 992px) {
-    #nav-container #name {
-        font-size: 2.5em;
-    }
-}
-
 #nav-container {
 	height: 12%;
 	background-color: #04262F;
 	padding-top: 14px;
-	border: 0 none;	
+	border-bottom: 1px solid rgba(255,255,255,.3);
+	margin-botom: 0;	
 }
 
 #nav-container #name {
@@ -47,6 +17,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	padding-left: 0;
+	font-size: 2.5em;
 }
 
 #nav-container li a {
@@ -54,6 +25,7 @@ body {
 	font-size: 1.2em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
+	background-color: #04262F;
 }
 
 #nav-container li a:hover {
