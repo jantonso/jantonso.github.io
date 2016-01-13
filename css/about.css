@@ -2,17 +2,8 @@
 	body {
 		background-color: #D1E8DA;
 		padding-top: 120px;
-		font-size: 6px;
+		font-size: 12px;
 	}
-}
-
-
-@media all and (min-width: 769px) and (max-width: 1119px) {
-	body {
-        background-color: #D1E8DA;
-        padding-top: 120px;
-        font-size: 10px;
-    }
 }
 
 @media all and (min-width: 1200px) {
