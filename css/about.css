@@ -1,13 +1,10 @@
 body {
 	background-color: #D1E8DA;
-	padding-top: 120px;
 	font-size: 14px;
 }
 
 #nav-container {
-	height: 12%;
 	background-color: #04262F;
-	padding-top: 14px;
 	border-bottom: 1px solid rgba(255,255,255,.3);
 	margin-bottom: 0;	
 }
@@ -25,6 +22,7 @@ body {
 	font-size: 16px;
 	color: #fff;
 	outline: 0;
+	border: 0;
 }
 
 #nav-container .navbar-toggle:focus,
@@ -45,12 +43,8 @@ body {
 	background-color: #04262F;
 }
 
-.portfolio-item {
-	margin-bottom: 25px;
-}
-
-.portfolio-item p {
-	font-color: #FFFFFF;
+#page-content {
+	padding-top: 80px;
 }
 
 #name {
