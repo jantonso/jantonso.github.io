@@ -13,15 +13,14 @@ body {
 	color: #43CC94;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
-	padding-left: 0;
 }
 
-@media (min-width:320px) {#nav-container #name {font-size: 1em;}}
-@media (min-width:481px) {#nav-container #name {font-size: 1em;}}
-@media (min-width:641px) {#nav-container #name {font-size: 2.5em;}}
-@media (min-width:961px) {#nav-container #name {font-size: 2.5em;}}
-@media (min-width:1025px) {#nav-container #name {font-size: 2.5em;}}
-@media (min-width:1281px) {#nav-container #name {font-size: 2.5em;}}
+@media (min-width:320px) {#nav-container #name {font-size: 1.75em;}}
+@media (min-width:481px) {#nav-container #name {font-size: 1.75em;}}
+@media (min-width:641px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
+@media (min-width:961px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
+@media (min-width:1025px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
+@media (min-width:1281px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
 
 #nav-container .navbar-toggle {
 	padding: 4px 6px;
