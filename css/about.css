@@ -24,10 +24,11 @@ body {
 	padding: 4px 6px;
 	font-size: 16px;
 	color: #fff;
+	outline: 0;
 }
 
-.navbar-custom .navbar-brand .navbar-toggle:focus,
-.navbar-custom .navbar-brand .navbar-toggle:active {
+#nav-container .navbar-toggle:focus,
+#nav-container .navbar-toggle:active {
     outline: 0;
 }
 
