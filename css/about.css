@@ -13,6 +13,7 @@ body {
 	color: #43CC94;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
+	margin: 0;
 }
 
 #nav-container .navbar-toggle {
@@ -83,16 +84,31 @@ p {
 }
 
 @media (min-width:320px) {
-    #nav-container #name {font-size: 1.75em;}
+    #nav-container #name {font-size: 1.75em; padding-left: 0;}
 	#intro-name {margin-top: 15px;}
 }
 
 @media (min-width:481px) {
-    #nav-container #name {font-size: 1.75em;}
+    #nav-container #name {font-size: 1.75em; padding-left: 0;}
 	#intro-name {margin-top: 15px;}
 }
 
-@media (min-width:641px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
-@media (min-width:961px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
-@media (min-width:1025px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
-@media (min-width:1281px) {#nav-container #name {font-size: 2em; padding-left: 0;}}
+@media (min-width:641px) {
+	#nav-container #name {font-size: 2em; padding-left: 0;}
+	#intro-name {margin-top: 0px;}
+}
+
+@media (min-width:961px) {
+	#nav-container #name {font-size: 2em; padding-left: 0;}
+	#intro-name {margin-top: 0px;}
+}
+
+@media (min-width:1025px) {
+	#nav-container #name {font-size: 2em; padding-left: 0;}
+	#intro-name {margin-top: 0px;}
+}
+
+@media (min-width:1281px) {
+	#nav-container #name {font-size: 2em; padding-left: 0;}
+	#intro-name {margin-top: 0px;}
+}
