@@ -20,6 +20,17 @@ body {
 	font-size: 2.5em;
 }
 
+#nav-container .navbar-toggle {
+	padding: 4px 6px;
+	font-size: 16px;
+	color: #fff;
+}
+
+.navbar-custom .navbar-brand .navbar-toggle:focus,
+.navbar-custom .navbar-brand .navbar-toggle:active {
+    outline: 0;
+}
+
 #nav-container li a {
 	color: #43CC94;
 	font-size: 1.2em;
