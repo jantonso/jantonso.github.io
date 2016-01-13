@@ -11,7 +11,8 @@ body {
 	#nav-container li {
 		padding: 0;
 		margin: 0;
-		font-size: 5px;
+		font-size: 0.7em;
+		width: 0.8em;
 	}
 }
 
