@@ -55,9 +55,23 @@
 		  <hr>
 		  <p class="proj-section"> Project Description </p>
 		    <p> Our data set consisted of key features about important individuals from a variety of countries. For each individual, we extracted the following key features: Source Country, Name, Field of Influence, and Description. We categorized individuals as First Generation or Second Generation or Higher using a Naive Bayes classifier. We calculated the feature Influence Score as the length of the person's Wikipedia page.</p>
-			<p> List of countries and respective number of individuals:</p>
-			<ol>
-			  <li><p>Taiwan: 21 </p></li>
+			<p> We decided that a parallel coordinates chart was the best way to visualize the information. Each line in the chart corresponds to an individual. This allows you to quickly view both trends and outliers in the data.</p>
+			<ul>
+			  <li><p> You can filter by Source Country, Field of Influence, Generation, and Influence Score by filtering along one of the four vertical axis. </p></li>
+			  <li><p> You can choose the region (Europe, Asia, Other) using the buttons on the right. </p></li>
+			</ul>
+			<img class="img-responsive project-images middle-images" src="content/viz1/imm1.png" alt="">	
+			<p> We linked the data table in the lower portion of the visualization to the parallel coordinates chart to update its display after filtering in real-time. 
+		    <ul>
+			  <li><p>Individuals are sorted decreasingly based on Influence Score and by Country.</p></li>
+			  <li><p> Clicking on an individual entry redirects you to his or her Wikipedia page.</p></li>
+			  <li><p> Hovering on an individual entry highlights that individual in the parallel coordinates chart.</p></li>
+			</ul>
+			<img class="img-responsive project-images" src="content/viz1/imm2.png" alt="">
+            <img class="img-responsive project-images middle-images" src="content/viz1/imm3.png" alt="">
+		    <p> List of countries and respective number of individuals:</p>
+            <ol>
+              <li><p>Taiwan: 21 </p></li>
               <li><p>Vietnam: 86 </p></li>
               <li><p>South Korea: 280 </p></li>
               <li><p>Japan: 321 </p></li>
@@ -71,21 +85,7 @@
               <li><p>Mexico: 742 </p></li>
               <li><p>Cuba: 352 </p></li>
               <li><p>Iran: 198 </p></li>
-			</ol>
-			<p> We decided that a parallel coordinates chart was the best way to visualize the information. Each line in the chart corresponds to an individual. This allows you to quickly view both trends and outliers in the data.</p>
-			<ul>
-			  <li><p> You can filter by Source Country, Field of Influence, Generation, and Influence Score by filtering along one of the four vertical axis. </p></li>
-			  <li><p> You can choose the region (Europe, Asia, Other) using the buttons on the right. </p></li>
-			</ul>
-			<p> We linked the data table in the lower portion of the visualization to the parallel coordinates chart to update its display after filtering in real-time. 
-		    <ul>
-			  <li><p>Individuals are sorted decreasingly based on Influence Score and by Country.</p></li>
-			  <li><p> Clicking on an individual entry redirects you to his or her Wikipedia page.</p></li>
-			  <li><p> Hovering on an individual entry highlights that individual in the parallel coordinates chart.</p></li>
-			</ul>
-            <img class="img-responsive project-images" src="content/viz1/imm1.png" alt="">
-			<img class="img-responsive project-images" src="content/viz1/imm2.png" alt="">
-            <img class="img-responsive project-images" src="content/viz1/imm3.png" alt="">
+            </ol>
 		  <hr>
 		  <p class="proj-section"> More Information </p>
 		    <p> The site is hosted on Google App Engine and the visualization was made using D3.js </p>
