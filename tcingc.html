@@ -55,18 +55,17 @@
 		  <img class="img-responsive project-images" src="content/tcingc/palau1.jpg" alt="">
 		  <hr>
 		  <p class="proj-section"> Project Description </p>
-		    <p> The Financial Intelligence Unit (FIU) is a government organization that monitors all financial activity in Palau. They investigate the financial activity on the island in order to identify possible activities related to money laundering or terrorist financial activity. From the three banks in Palau, the FIU receives Cash Transaction Reports (CTRs) and Suspicious Transaction Reports (STRs). From Customs, the FIU receives Cross Border Currency Reports (CBCRs). These reports provide the basis for any investigations into money laundering or terrorist financial activity.</p>
-			<p> Previously, all CTRs, STRs, and CBCRs were submitted to the FIU in paper format. Having these reports in paper format created many issues that hindered the FIU's ability to perform the analysis that are integral to its functioning. For the FIU to be effective as an entity, they needed a better system for storing and analyzing their reports.</p>
+		    <p> The Financial Intelligence Unit (FIU) is a government organization that monitors all financial activity in Palau. From the three banks in Palau, the FIU receives Cash Transaction Reports (CTRs) and Suspicious Transaction Reports (STRs). From Customs, the FIU receives Cross Border Currency Reports (CBCRs). These reports provide the basis for any investigations into money laundering or terrorist financial activity.</p>
+			<p> Previously, all CTRs, STRs, and CBCRs were submitted to the FIU in paper format. Having these reports in paper format created many issues that hindered the FIU's ability to perform the analysis that are integral to its functioning. </p>
             <p> Another student and myself completed the following tasks: </p>
 			<ul>
-			  <li><p> Built and deployed an Access database that enabled efficient search and analysis of financial reports.</p></li>
+			  <li><p> Built and deployed a Microsoft Access database that enabled efficient search and analysis of financial reports.</p></li>
 			  <li><p> Enabled electronic reporting between various financial institutions and the FIU through secure electronic transfer of reports in documented CSV file format.</p></li>
-			  <li><p> Trained staff of the FIU to use the Access database and to efficiently import data into the database.</p></li>
+			  <li><p> Trained staff of the FIU to use the Microsoft Access database and to efficiently import data into the database.</p></li>
 			  <li><p> Created a <a href="http://www.palaufiu.org">website</a> to provide information about the FIU in Palau, raise awareness of the effects of money laundering, and help the FIU establish credibility with other government entities.</p></li>
 			</ul>
 		  <hr>
-		  <p class="proj-section"> Access Database </p>
-			<p> For the locally hosted database, we decided to use Microsoft Access because of two main deciding factors: cost and sustainability. The FIU had Access 2007 installed on each computer in the office and there would be no added cost for any other software or hardware. In addition, the staff member of the FIU that would be in charge of the database when the consultants left, Boboy, had prior experience using Microsoft Access databases. </p>
+		  <p class="proj-section"> Microsoft Access Database </p>
 			<p> The database application was created with the following features: </p>
 			<ul>
 			  <li><p> A Main Form to search the database for CTRs, STRs, CBCRs, Companies, and Cases that match a specified name, date, and/or account number.</li></p>
@@ -84,16 +83,26 @@
 		  <p class="proj-section"> Electronic Reporting </p>
 			<p> To gain a better understanding of the current process of reporting CTRs and STRs, we met with the branch Presidents of the Palauan banks and discussed how current reporting is processed and how it is electronically sent to FINCen. </p>
 			<p> After this initial meeting, we proposed an electronic reporting process in which report files were encrypted locally and uploaded by the banks to a secure location for the FIU to download and decrypt. We created a document detailing the preferred submission format and provided example report CSV files, which was delivered to the banks for feedback.</p>
+			<img class="img-responsive project-images middle-images" src="content/tcingc/er1.png" alt="">
 			<p> Through further discussions with the Bank of Hawaii, we discovered that reports are generated automatically for FINCen by the bank's computer system, which was created by an outside vendor FIS, and are only available in PDF format for the FIU. To be able to have seperate reports created that fit the CSV format desired by the FIU, the main branch would have to discuss it with FIS and obtain a cost analysis. </p>
-			<p> Since the bank's compliance officers and lawyers would need to spend extra time verifying the security of Box, a third party storage system, they suggested an alternative solution of sending reports via encrypted email using their exisiting encryption system. In order to speed up the timeline, the FIU agreed to using encrypted email and we created RSA public/private keys for the FIU and delivered the FIU's public key to the banks to use to encrypt email communication.</p>
-			<p> We created import routines in the Access database to allow FIU staff to easily import the report data from the CSV files into the database.</p>
+			<p> Since the bank's compliance officers and lawyers would need to spend extra time verifying the security of Box, a third party storage system, they suggested an alternative solution of sending reports via encrypted email using their exisiting encryption system. In order to speed up the timeline, the FIU agreed to using encrypted email and we trained the staff on using public key encryption in Microsoft Outlook.</p>
+			<img class="img-responsive project-images" src="content/tcingc/er3.png" alt="">
+			<div class="row bot-images middle-images">
+			  <div class="col-md-6 left-images">	
+				<img class="img-responsive" src="content/tcingc/er4.png" alt="">
+			  </div>
+			  <div class="col-md-6 right-images">	
+				<img class="img-responsive" src="content/tcingc/er5.png" alt="">
+			  </div>
+			</div>
+			<p> We created import routines in the Microsoft Access database to allow FIU staff to easily import the report data from the CSV files into the database.</p>
+			<img class="img-responsive project-images middle-images" src="content/tcingc/er2.png" alt="">
 			<p> The banks are still in the process of creating reports in our specified CSV format, so they are not currently submitting reports electronically.</p>
 		  <hr>
 		  <p class="proj-section"> Training FIU Staff</p>
 			<p> An original prototype of the database containing only the CTRs and STRs forms/queries was created a presented to Boboy around week 6. He was able to test the prototype and begin to input old data into the database through the appropriate forms. Through this testing, we discovered and fixed small bugs and tweaked the design of the system, as well as allowed Boboy to gain familiarity with the database application.</p>
 			<p> The final version of the database was deployed to both Nelson's, the Director of the FIU, and Boboy's computers. They each had one week to manually enter data and test the system before the consultants left and were able to gain familiarity with the final version. </p>
 		    <p> In order to mitigate the risk that the consultants will not be there once the banks start to submit reports electronically, there were multiple trial runs of submission. The consultants encrypted and emailed test CSV reports to Boboy. Boboy then downloaded and decrypted the CSV reports and imported them into the database. </p>
-			<p> In order to further ensure the sustainability of the system once the consultants leave, Conrad, the Palauan government IT guy, stopped by at multiple points in the development process in order to learn about the system. Conrad is familiar with Access and knew of others on the island who could help maintain the database once we left.</p>
 		  <hr>
 		  <p class="proj-section"> Life in Palau </p>
 			<p> We were fortunate enough to have a meeting with the President of Palau, Tommy Remengesau, where we discussed our completed project and his vision for using technological development to solve key problems in Palau. </p>
