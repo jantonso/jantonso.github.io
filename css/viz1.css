@@ -1,5 +1,5 @@
 body {
-	background-color: #D1E8DA;
+    background-color: #EEECE7;
 	font-size: 14px;
 }
 
@@ -81,6 +81,7 @@ hr {
 #proj-content p {
 	font-family: 'Raleway', sans-serif;
     font-weight: 300;
+	margin: 5px 0 0 0;
 }
 
 .proj-section {
@@ -113,6 +114,33 @@ hr {
 
 .middle-images {
 	margin-bottom: 20px;
+}
+
+#to-top {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#to-top a {
+    text-decoration: none;
+    color: #43CC94;
+    font-weight: 400;
+}
+
+#to-top #left-hr {
+    padding-right: 0;
+}
+
+#to-top #right-hr {
+    padding-left: 0;
+}
+
+#to-top p {
+    margin-top: 20px;
+}
+
+#to-top a:hover {
+    color: #04262F;
 }
 
 @media (min-width:320px) {
