@@ -61,19 +61,18 @@
 			  <ol> 
 				<li><p> Gather baseline accelerometer data that corresponds to no movement by the user</p></li>
 				  <ul>
-				    <li><p> The user places his or her phone on the bed and records sessions where they lay still in a number of positions. </p></li>
-				    <li><p> Lying on their left side, right side, stomach, back, and one with the bed empty. </p></li>
+				    <li><p> The user places his or her phone on the bed and records sessions where they lay still in a number of positions: left side, ride side, stomach, back, and one with the bed empty </p></li>
 				  </ul>
 				<li><p> Establish threshold accelerometer values for no movement by the user</p></li>
 				  <ul>
 				    <li><p> The derivative of acceleration, for x, y, and z with respect to time, stays within a certain threshold [-b1, +b1] for each of the respective scenarios.</p></li>
-					<li><p> Establish final thresholds for the x, y, and z directions by choosing the absolute minimum -b1 and maximum b1 across all 5 positions for each direction. 
+					<li><p> Establish final thresholds for the x, y, and z directions by choosing the absolute minimum -b1 and maximum +b1 for each direction. 
 
 				  </ul>
 				<li><p> Calculate movement events </p></li>
 			      <ul>
-				    <li><p> A Movement Event is defined as when one of the acceleration derivative readings exceeds the threshold values established in the previous step. So, for example if x acc derivative at a time step is 0.15 and the threshold for the x direction was [-0.08, 0.08], then it is a movement event.</p></li>
-				    <p> The following figures show the x, y, and z acceleration derivative readings for a session where a user gets into bed, lays still for aproximately 10 seconds, and then gets out of bed. As you can see, when the user is laying still the acceleration derivative readings remain fairly consistent and within a certain threshold. When the user gets into or out of bed, the acceleration derivative readings exceed that threshold. </p>
+				    <li><p> Movement Event: when one of the x, y, or z acc derivative values exceeds the final thresholds. So, for example if x acc derivative value is 0.15 and the threshold for the x direction was [-0.08, 0.08], then it is a movement event.</p></li>
+				    <p> The following figures show the x, y, and z acc derivative values for a session where a user gets into bed, lays still for aproximately 10 seconds, and then gets out of bed. As you can see, when the user is laying still the acc derivative values remain fairly consistent and within a certain threshold. When the user gets into or out of bed, the acc derivative values exceed that threshold. </p>
 					<div class="row project-images middle-images">
 					  <div class="col-md-4 left-images">
 						<img class="img-responsive" src="content/sleepapp/xd.png" alt=""> 
@@ -92,7 +91,7 @@
 				<li><p> Find clusters of movement </p></li>
 				  <ul>
 					<li><p> Identify 20 second periods with multiple non-zero Movement Weights.</p></li>
-				    <li><p> If there are two or more non-zero 2 second Movement Weights within a 20 second period, then I assign each 2 second window in that period to have the local maximum Movement Weight for that 20 second period. </p></li>
+				    <li><p> Assign each 2 second window in that period to have the local maximum Movement Weight for that 20 second period. </p></li>
 				  </ul>
 			  </ol> 
 			<p class="section-header"> Classify the Sleep </p>
@@ -131,12 +130,7 @@ ng" alt="">
 				<img class="img-responsive" src="content/sleepapp/movement_right.png" alt="">
 			  </div>
             </div>
-			<p> Out of 24 single movement sessions, my approach correctly identified 22 movements for an overall accuracy of 91.66% and did not report any false movements. </p>
-			<p> There is a total of 670 20-minute time bins of Movement Weights from all six users comprising 32 nights worth of sleep. The training set consists of a total of 19 nights worth of data and 390 20-minute time bins. The testing set consists of a total of 13 nights worth of data and 280 20-minute time bins. Using the SVM classifier, I achieved a precision score of 0.82, a recall score of 0.84, and a f1-score of 0.82 when classifying the 20-minute time bins as "asleep", "restless", or "woke up". </p>	
-		  <hr>
-		  <p class="proj-section"> Conclusion and Lessons Learned </p>
-		    <p> The SVM classifier was much more accurate in classifying "asleep" labels, than it was in classifying "restless" or "woke up" labels. I believe this is because it has a hard time distinguishing between "restless" and "woke up" labels, as there is not a significant enough difference in the respective movements.</p>
-		    <p> In the future, I belive my classification could be improved by training a classifier to predict between two labels, "asleep" or "not asleep". From this, we could then label each first "not asleep" label as "woke up" and any preceding "not asleep" labels as "restless" in a consecutive block of "not asleep" labels. </p>
+			<p> There are a total of 670 20-minute time bins of Movement Weights from all six users comprising 32 nights worth of sleep. The training set consists of a total of 19 nights worth of data and 390 20-minute time bins. The testing set consists of a total of 13 nights worth of data and 280 20-minute time bins. Using the SVM classifier, I achieved a precision score of 0.82, a recall score of 0.84, and a f1-score of 0.82 when classifying the 20-minute time bins as "asleep", "restless", or "woke up". </p>	
 		  <hr>
 		  <p class="proj-section"> Project Timeline </p>
 			<p> This project was completed via a series of two week sprints (milestones): M1, M2, M3, M4. For each milestone, I added work towards a research paper (which grew from 2 to 8 pages) and presented my work to the class/public. </p>
@@ -146,7 +140,7 @@ ng" alt="">
 			<p> M4: <a href="content/sleepapp/jantonso_m4.pdf">paper</a> (8 pages) and final presentation <a href="content/sleepapp/18755_poster_jantonso.pdf">poster</a>. </p>
 		  <hr>
 		  <p class="proj-section"> More Information </p>	
-		    <a href="https://github.com/jantonso/SleepApp"><p> Github </p></a>
+		    <p><a href="https://github.com/jantonso/SleepApp"> Github </a></p>
 		  <div class="row" id="to-top">
             <div class="col-md-5" id="left-hr">
               <hr>
