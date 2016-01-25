@@ -53,12 +53,8 @@
 		  <p> HealthMate automates the task of contacting, collecting, and storing a patients up-to-date medical history. This allows users to manage their data independently, without risks of losing it, and leads to increased patient awareness and better health service.
 		  <p> This project was completed for the class 18749: Building Reliable Distributed Systems. </p>
 		  <hr>
-		  <p class="proj-section"> Motivation </p>
-		    <p> Currently, patients are reliant on their medical providers to manage their health data. If a patient needs to switch hospitals or doctors, they must request for their old provider to send their medical history to the new provider. Anyone who has experienced this knows that this process is not usually easy. </p>
-			<p> HealthMate gives the user direct control of their medical history across all of their providers and automates the process of aggregating past medical records to one central location.</p>
-		  <hr>
-		  <p class="proj-section"> Functional Requiremnts </p>
-		    <p> We narrowed the scope of our project to enable two key features for users: </p>
+		  <p class="proj-section"> Functional Requirements </p>
+		    <p> Our web service provides two key features for users: </p>
 			<ol>
               <li> <p>Submitting Requests to Medical Providers for Information </p></li>
                 <ul>
@@ -73,6 +69,22 @@
                   <li> <p>User can update his medical records </p></li>
                 </ul>
             </ol>
+			<div class="row project-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthmate/mvp1.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthmate/mvp3.png" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthmate/mvp2.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthmate/mvp4.png" alt="">
+              </div>
+            </div>
 		  <hr>
 		  <p class="proj-section"> Initial Architecture </p>
             <p> We decided to use the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack and decided to use AWS for our hosting. </p>
@@ -83,30 +95,9 @@
 			  <li> <p> Worker Servers </p></li>
 			  <li> <p> Database </p></li>
             </ul>
-          <img class="img-responsive project-images" src="content/healthmate/architecture1.png" alt="">	  
-		  <hr>
-		  <p class="proj-section"> Minimum Viable Product </p>
-			<p> We quickly implemented the minimum viable product for our service. This consisted of a website with a basic user interface created using Bootstrap. </p>
-			<p> Users could create and manage user accounts. Once logged in, they could request for their medical records to be scraped from the UPMC patient portal after they provide us with their UPMC user credentials. Finally, their records would be automatically scraped and displayed in their home page for future viewing. </p>
-			<p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
-			<p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
-			<p> From here, we shifted our focus towards designing our system to be fault tolerant, which was the main goal of this course project. </p>
-		    <div class="row project-images">
-              <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/healthmate/mvp1.png" alt="">
-              </div>
-              <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/healthmate/mvp3.png" alt="">
-              </div>
-            </div>
-			<div class="row project-images bot-images">
-              <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/healthmate/mvp2.png" alt="">
-              </div>
-              <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/healthmate/mvp4.png" alt="">
-              </div>
-            </div>
+            <img class="img-responsive project-images middle-images" src="content/healthmate/architecture1.png" alt="">	  
+		     <p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
+            <p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
 		  <hr>
 	  	  <p class="proj-section"> Fault Tolerance </p>
 			<p> The next step was to update our architecture to make the system fault tolerant to message loss and OS/Process crashes. </p>
@@ -118,14 +109,11 @@
 			</ul>
 		    <p> Our updated final architecture diagram: </p>
 			<img class="img-responsive project-images middle-images" src="content/healthmate/architecture2.png" alt="">
-		    <p> Our final system has two single points of failure: The Web Server and the Coordinator Server. Given that the project was completed over a single semester, we decided not to focus on replicating the Web Server or Coordinator Server.</p
->
 		  <hr>
 		  <p class="proj-section"> Passively Replicated Master Server </p>
-			<p> We ensured fault tolerance for our Master Server through passive replication. We had one primary Master Server that actively receives requests from users and two backup Master Servers that are not actively receiving requests. We have a Request Log that is stored in the DB that stores the state of user requests. </p>
-			<p> When the primary Master Server receives a new request to scrape information, it adds a new entry to the Request Log with information about the request and a state of "started". When the primary Master Server receives confirmation that the scrape is complete, it updates the entry in the Request Log to the state of "finished". </p> 
-			<p> We added a Coordinator Server that manages the primary and backup Master Servers. It receives requests from the Web Server and forwards them to the primary Master Server. Every 5 seconds, the coordinator checks the health status of the primary Master Server. If it detects that the primary Master Server has crashed, it elects one of the backup Master Servers to be primary and notifies both backup Master Servers of the reelection process. </p>
-			<p> The new primary Master Server reads the Request Log and retries all requests that are not in the state of "finished". The Coordinator Server now forwards all requests to the new primary Master Server and our system is back to a consistent state. </p> 
+			<p> There is one primary Master Server that actively receives requests and two backup Master Servers that are not actively receiving requests. A Request Log in the DB stores the state of user requests. </p> 
+			<p> A Coordinator Server manages the primary and backup Master Servers. It receives requests from the Web Server and forwards them to the primary Master Server. Every 5 seconds, the coordinator checks the health status of the primary Master Server. If it detects that the primary Master Server has crashed, it elects one of the backup Master Servers to be primary and notifies both backup Master Servers of the reelection process. </p>
+			<p> The new primary Master Server reads the Request Log and retries all unfinished requests. The Coordinator Server now forwards all requests to the new primary Master Server and our system is back to a consistent state. </p> 
 		  <hr>
 		  <p class="proj-section"> Stateless Worker Servers </p>
 		 	<p> We kept our Worker Servers completely stateless to ensure fault tolerance. All of the Worker Servers are completely identical and their sole function is to perform the scraping of medical records. If one of the Worker Server crashes during a scrape request, the Master Server will detect this and retry the scrape request with another Worker Server that is randomly elected. Because of this, we can easily spin up/down Worker Servers as needed based on demand.</p> 
