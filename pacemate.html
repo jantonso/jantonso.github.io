@@ -64,29 +64,12 @@
 			<p> The PaceMate system consists of four key components:</p> 
 			<ol>
               <li> <p> Physical Pacing System (50m) </p></li>
-                <ul>
-                  <li> <p> Arduino Yun Microcontroller </p></li>
-                  <li> <p> 38 programmable RGB LEDs </p> </li>
-                  <li> <p> Sonar Sensor to record splits</p></li>
-				  <li> <p> Vinyl Fabric Casing (50m) </p</li>
-				</ul>
               <li> <p> Android Application </p></li>
-                <ul>
-                  <li><p> User can create a new workout </p></li>
-				  <li><p> User can start/stop the workout <p></li>
-				  <li><p> User can view his or her past workouts </p></p>
-				</ul>
 			  <li> <p> Web Application </p></li>
-				<ul>
-				  <li><p> User can create an account </p></li>
-				  <li><p> User can create a new workout entry through a form on the website </p></li>
-				  <li><p> User can view his or her past workouts</p></li>
-				  <li><p> REST API for Android to create a new workout entry and for Arduino to record split distances/times for a workout entry </p></li>
-				</ul> 
 			  <li> <p> MongoDB Database </p></li>
             </ol>
-		    <img class="img-responsive project-images" src="content/pacemate/track1.png" alt="">
-			<img class="img-responsive project-images" src="content/pacemate/architecture1.png" alt="">
+		    <img class="img-responsive project-images" src="content/pacemate/architecture1.png" alt="">
+			<img class="img-responsive project-images" src="content/pacemate/track1.png" alt="">
 		  <hr>
 		  <p class="proj-section"> Physical Pacing System </p>
 			<p> The pacing system consists of 38 programmable RGB LEDs connected in series, spaced out approximately every meter, and controlled by an Arduino Yun microcontroller. We decided to use the Arduino Yun because it has built in WiFi capabilities. We use a sonar sensor to detect user movement in order to record split times. </p>
@@ -120,28 +103,21 @@
 			</ol>
 		  <hr>
 		  <p class="proj-section"> Android Application </p>
-			<p> The Home Page of the application allows users to create a new workout or to view their past workouts. </p>
-			<ol>
-			  <li><p> Creating a new workout </p></li>
-			  <ul>
-			    <li><p> User specifies coach, athlete, description of workout, target distance, and target pace. </p></li>
-			    <li><p> POST request to Web Application returns with a workout_id. </p></li>
-			    <li><p> Upon receiving workout_id, sends workout_id, target pace, and target distance to Arduino Yun. </p></li>
-		        <li><p> Redirects user to Workout Page. </p></li>
-	     	  </ul>
-			  <li><p> Viewing past workouts </p></li>
-			  <ul>
-				<li><p> Open Web Application in the browser. </p></li>
-			  </ul>
-		    </ol>
-			<p> The Workout Page displays information about the current workout, allows the user to start/stop the workout, and lets them view their past workouts. </p>
+			<p> Users can create a new workout, start/stop the workout, and view their past workouts. </p>
+			<div class="row project-images">
+			  <div class="col-md-6 left-images">
+				<img class="img-responsive" src="content/pacemate/pm1.png" alt="">
+			  </div>
+			  <div class="col-md-6 right-images">
+				<img class="img-responsive" src="content/pacemate/pm2.png" alt="">
+			  </div>
+			</div>
 		  <hr>
 		  <p class="proj-section"> Web Application </p>
 			<p> Users can create an account consisting of a username and password. They can view their past workouts via a dashboard on the homepage, which displays any workout that the user account was associated with (either as a coach or an athlete). Users can create a new workout entry via a form on the new workout page. </p>
 			<p> The Web Application has a REST API for the Android app to create a new workout entry and for the Arduino Yun to record split distances/times for an existing workout. </p>
 		  <hr>
 		  <p class="proj-section"> MongoDB Database </p>
-			<p> The database stores User account information and workout entries.</p> 
 			<p> We have a passively replicated database in AWS with one Primary Node, and two Backup Nodes in a MongoDB replica set to ensure redundancy and increase data availability. The Primary Node records all changes in an operation log. The Backup Nodes replicate this operation log asynchronously and apply data operations to ensure that they match the Primary Node. </p>
             <p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
             <div class="row project-images">
