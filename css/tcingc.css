@@ -135,6 +135,10 @@ hr {
     font-weight: 400;
 }
 
+#to-top p {
+	margin-top: 20px;
+}
+
 #to-top a:hover {
     color: #04262F;
 }
@@ -142,13 +146,13 @@ hr {
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
 	#proj-name {font-size: 2.0em;}
-	#to-top #right-hr {margin-top: 10px;}
+	#to-top #right-hr {margin-top: 0px;}
 }
 
 @media (min-width:481px) {
     #nav-container #name {font-size: 1.75em;}
     #proj-name {font-size: 2.85em;}
-	#to-top #right-hr {margin-top: 10px;}
+	#to-top #right-hr {margin-top: 0px;}
 }
 
 @media (min-width:641px) {
