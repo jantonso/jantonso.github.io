@@ -146,13 +146,13 @@ hr {
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
 	#proj-name {font-size: 2.0em;}
-	#to-top #right-hr hr {margin-top: 10px;}
+	#to-top #right-hr hr {margin-top: 20px;}
 }
 
 @media (min-width:481px) {
     #nav-container #name {font-size: 1.75em;}
     #proj-name {font-size: 2.85em;}
-	#to-top #right-hr hr {margin-top: 10px;}
+	#to-top #right-hr hr {margin-top: 20px;}
 }
 
 @media (min-width:641px) {
