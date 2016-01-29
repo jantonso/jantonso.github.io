@@ -153,6 +153,7 @@ hr {
 
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
+	#proj-name {font-size: 2.0em;}
 }
 
 @media (min-width:481px) {
