@@ -85,13 +85,13 @@ p {
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
 	#intro-name {margin-top: 15px;}
-	#page-content a {margin-bottom: 20px;}
+	#page-content #linkedin {margin-bottom: 20px;}
 }
 
 @media (min-width:481px) {
     #nav-container #name {font-size: 1.75em;}
 	#intro-name {margin-top: 15px;}
-	#page-content a {margin-bottom: 20px;}
+	#page-content #linkedin {margin-bottom: 20px;}
 }
 
 @media (min-width:641px) {
