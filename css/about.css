@@ -82,6 +82,11 @@ p {
 	font-weight: 400;
 }
 
+#page-content a {
+	margin-bottom: 10px;
+}
+
+
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
 	#intro-name {margin-top: 15px;}
