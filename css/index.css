@@ -90,14 +90,14 @@ body {
 
 @media (min-width:320px) {
     #nav-container #name {font-size: 1.75em;}
-	.portfolio-item figcaption {padding-top: 70px;}
+	.portfolio-item figcaption {padding-top: 80px;}
 	.portfolio-item figcaption p {font-size: 1.4em;}
 }
 
 @media (min-width:481px) {
     #nav-container #name {font-size: 1.75em;}
-    .portfolio-item figcaption {padding-top: 150px;}
-    .portfolio-item figcaption p {font-size: 2.0em;}
+    .portfolio-item figcaption {padding-top: 145px;}
+    .portfolio-item figcaption p {font-size: 2.25em;}
 }
 
 @media (min-width:641px) {
