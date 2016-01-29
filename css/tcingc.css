@@ -135,14 +135,6 @@ hr {
     font-weight: 400;
 }
 
-#to-top #left-hr {
-    padding-right: 0;
-}
-
-#to-top #right-hr {
-    padding-left: 0;
-}
-
 #to-top p {
     margin-top: 20px;
 }
@@ -162,16 +154,24 @@ hr {
 
 @media (min-width:641px) {
     #nav-container #name {font-size: 2em; padding-left: 0;}
+	#to-top #left-hr {padding-right: 0;}
+	#to-top #right-hr {padding-left: 0;}
 }
 
 @media (min-width:961px) {
     #nav-container #name {font-size: 2em; padding-left: 0;}
+	#to-top #left-hr {padding-right: 0;}
+    #to-top #right-hr {padding-left: 0;}
 }
 
 @media (min-width:1025px) {
     #nav-container #name {font-size: 2em; padding-left: 0;}
+	#to-top #left-hr {padding-right: 0;}
+    #to-top #right-hr {padding-left: 0;}
 }
 
 @media (min-width:1281px) {
     #nav-container #name {font-size: 2em; padding-left: 0;}
+	#to-top #left-hr {padding-right: 0;}
+    #to-top #right-hr {padding-left: 0;}
 }
