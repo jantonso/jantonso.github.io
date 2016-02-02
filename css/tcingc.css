@@ -136,17 +136,19 @@ hr {
 }
 
 /* Mobile portrait */
-@media (min-width:320px) {
+@media (min-width:320px) and (max-width: 480px){
     #nav-container #name {font-size: 1.75em;}
 	#proj-name {font-size: 2.0em;}
 	#to-top #right-hr hr {margin-top: 20px;}
+	.right-images {margin-top: 20px;}
 }
 
 /* Mobile landscape */
-@media (min-width:481px) {
+@media (min-width:481px) and max-width(: 640px){
     #nav-container #name {font-size: 1.75em;}
     #proj-name {font-size: 2.85em;}
 	#to-top #right-hr hr {margin-top: 20px;}
+	.right-images {margin-top: 20px;}
 }
 
 /* Tablet and desktop */
