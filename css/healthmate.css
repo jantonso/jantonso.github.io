@@ -125,6 +125,7 @@ hr {
     #to-top #right-hr hr {margin-top: 20px;}
     .bot-images {margin-top: 20px;}
     .right-images {margin-top: 20px;}
+	.mid-images {margin-top: 20px;}
 }
 
 /* Mobile landscape */
@@ -134,6 +135,7 @@ hr {
     #to-top #right-hr hr {margin-top: 20px;}
     .bot-images {margin-top: 20px;}
     .right-images {margin-top: 20px;}
+	.mid-images {margin-top: 20px;}
 }
 
 /* Tablet and desktop */
