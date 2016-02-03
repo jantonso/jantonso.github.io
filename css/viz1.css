@@ -130,6 +130,7 @@ hr {
     .bot-images {margin-top: 20px;}
     .right-images {margin-top: 20px;}
 	.mid-images {margin-top: 20px;}
+    #proj-content img {min-width: 100%;}
 }
 
 /* Mobile landscape */
@@ -140,6 +141,7 @@ hr {
     .bot-images {margin-top: 20px;}
     .right-images {margin-top: 20px;}
 	.mid-images {margin-top: 20px;}
+    #proj-content img {min-width: 100%;}
 }
 
 /* Tablet and desktop */
