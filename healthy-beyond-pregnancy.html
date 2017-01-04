@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/healthy-beyond-pregnancy.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/backtotop.js"></script>
+  </head>
+  <body>
+	<!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" id="name" href="index.html"> Joshua Antonson </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="about.html">About</a></li>
+            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro" id="page-content">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">Healthy Beyond Pregnancy </h1>
+			  <p id="proj-desc"> Web Service for Postpartum Care and Scheduling </p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p>  I consulted with a group of researchers at the Magee's Women's Hospital of UPMC for six months in order to create this project. Healthy Beyond Pregnancy provides patients with critical postpartum information and the ability to schedule a follow up appointment to check on their progress post pregnancy.
+		  <hr>
+		  <p class="proj-section"> Functional Requirements </p>
+			<ol>
+              <li><p>Patient answers a list of postpartum questions</p></li>
+              <li><p>Patient watches videos with information tailored to their needs</p></li>
+              <li><p>Patient schedules follow-up appointments 4-6 weeks from date of delivery</p></li>
+              <li><p>Patient provides contact information and signs consent form</p></li>
+              <li><p>Patient receives text messages with updates as appointment nears</p>
+              <li><p>Patient's information and answers can be printed easily at the end of the process via PDF format</p></li>
+              <li><p>All information is recorded and stored in a database</p></li>
+              <li><p>Website must be responsive for a variety of tablets</p></li>
+            </ol>
+			<div class="row project-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/home1.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/pc.png" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/pc1.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/pc2.png" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/pc3.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/cs.png" alt="">
+              </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> Architecture </p>
+            <p> This project was built using Django and is currently hosted on Heroku w/ a PostgreSQL DB.</p>
+            <p> Uses <a href="https://github.com/szimek/signature_pad">signature_pad</a> for HTML5 canvass based signature forms, <a href="https://jqueryui.com/datepicker/">jQuery UI's Datepicker</a> for the custom calendar interface, and Python's <a href="https://www.reportlab.com/docs/reportlab-userguide.pdf">ReportLab</a> for generating PDFs.</p>
+            <div class="row project-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/calendar1.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/calendar2.png" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/confirm.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/phone.png" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/final.png" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="content/healthy-beyond-pregnancy/pdf.png" alt="">
+              </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+	        <p>Website can be viewed <a href="http://healthy-beyond-pregnancy.herokuapp.com">here</a>.</p>
+			<p><a href="https://github.com/jantonso/hbp">Github </a></p>
+		  <div class="row" id="to-top">
+            <div class="col-md-5" id="left-hr">
+              <hr>
+            </div>
+            <div class="col-md-2">
+              <p><a href="#" class="back-to-top">Back to Top </a></p>
+            </div>
+            <div class="col-md-5" id="right-hr">
+              <hr>
+            </div>
+          </div>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>
