@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/ridethru.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/projects.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/backtotop.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/backtotop.js"></script>
   </head>
   <body>
 	<!-- Navbar -->
@@ -27,7 +27,7 @@
             <li class="page-scroll"><a href="about.html">About</a></li>
             <li class="page-scroll"><a href="index.html">Projects</a></li>
             <li class="page-scroll"><a href="https://jantonso.github.io/blog">Blog</a></li>
-            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+            <li class="page-scroll"><a href="static/docs/resume.pdf">Resume</a></li>
           </ul>
         </div>
       </div>
@@ -78,18 +78,18 @@
 			    <li> <p>Oculus Rift to render an immersive 3D experience </p></li>
 			  </ul>
 		    </ol>
-		  <img class="img-responsive project-images" src="content/ridethru/architecture.jpg" alt="">
+		  <img class="img-responsive project-images" src="static/images/ridethru/architecture.jpg" alt="">
 		  <hr>
 		  <p class="proj-section"> RPM Sensor</p>
 		    <p> In order to determine the user's RPM (Rotations per Minute), we placed a reed switch sensor on the bike frame and a small magnet on the wheel. The switch in the sensor is normally open (0), but when the magnetic field is present the switch is closed (1). We implemented AVR code to detect this via interrupt handling and to calculate user RPM every 5 seconds. </p>
 		    <div class="row project-images">
               <div class="col-md-7 left-images">
-                <img class="img-responsive" src="content/ridethru/rpm1.jpg" alt="">
+                <img class="img-responsive" src="static/images/ridethru/rpm1.jpg" alt="">
               </div>
               <div class="col-md-5 right-images">
               	<video controls class="img img-responsive">
-				  <source src="content/ridethru/rpm2.ogv" type="video/ogg">
-				  <source src="content/ridethru/rpm2.mp4" type="video/mp4">
+				  <source src="static/videos/ridethru_rpm2.ogv" type="video/ogg">
+				  <source src="static/videos/ridethru_rpm2.mp4" type="video/mp4">
 				  Your browser does not support the video tag.
 				</video>
 			  </div>
@@ -99,12 +99,12 @@
 		    <p> We mounted a PS2 Yamaha controller onto our stationary bike. We seperated the wires in the traditional tubing and attached them to pins on our PCB. Building from an <a href="https://github.com/madsci1016/Arduino-PS2X">open source library</a> for controlling PS2 controllers via an arduino, we developed code for reading controls and commands from the Yamaha controller. </p> 
 			<div class="row project-images">
               <div class="col-md-6 left-images">
-				<img class="img-responsive" src="content/ridethru/ps2-wiring3.jpg" alt="">
-                <img class="img-responsive bot-images" src="content/ridethru/ps2-wiring1.jpg" alt="">
+				<img class="img-responsive" src="static/images/ridethru/ps2-wiring3.jpg" alt="">
+                <img class="img-responsive bot-images" src="static/images/ridethru/ps2-wiring1.jpg" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/ridethru/ps2-wiring2.jpg" alt="">
-				<img class="img-responsive bot-images" src="content/ridethru/ps2-wiring4.jpg" alt="">          
+                <img class="img-responsive" src="static/images/ridethru/ps2-wiring2.jpg" alt="">
+				<img class="img-responsive bot-images" src="static/images/ridethru/ps2-wiring4.jpg" alt="">          
 			  </div>
             </div>
 		  <hr>
@@ -112,10 +112,10 @@
 		    <p> In order to create a fully immersive user experience, we developed a fan which responds to the user's RPM in real-time. The faster the user pedals, the harder the fan blows. We built a laser cut mount for the fan to ensure user safety and implemented the functionality to control fan speed via PWM (Pulse width modulation). </p>
 			<div class="row project-images">
               <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/ridethru/fan1.jpg" alt="">
+                <img class="img-responsive" src="static/images/ridethru/fan1.jpg" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/ridethru/fan2.jpg" alt="">
+                <img class="img-responsive" src="static/images/ridethru/fan2.jpg" alt="">
               </div>
             </div>            
           <hr>
@@ -123,29 +123,29 @@
 		    <p> After researching the necessary schematics that we would need to run all of our sensors, we began designing the PCB. We went through many iterations of the design and settled on a schematic that included all of our required features plus the ability to add motor-controlled bike resistance in the future. The PCB design was done using CadSoft EAGLE PCB Design Software. Finally, we soldered all of the necessary components onto the PCB and connected it to our 3 sensors on the bike.</p>
             <div class="row project-images">
 			  <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/ridethru/pcb1.jpg" alt="">
+                <img class="img-responsive" src="static/images/ridethru/pcb1.jpg" alt="">
               </div>
 			  <div class="col-md-6 right-images">
-			    <img class="img-responsive" src="content/ridethru/pcb2.jpg" alt="">
+			    <img class="img-responsive" src="static/images/ridethru/pcb2.jpg" alt="">
 			  </div>
 			</div>
 		  <hr>
 		  <p class="proj-section"> Processing + Unity3D </p>
 		    <p> For the game development side of the project, we designed our game using Unity combined with OculusUnityIntegration. Initially, we built a racing game using a traditional car, but during user testing we discovered that the physics behind a traditional car in Unity made it very hard to control. </p>
-			<img class="img-responsive project-images middle-images" src="content/ridethru/unity1.jpg" alt="">
+			<img class="img-responsive project-images middle-images" src="static/images/ridethru/unity1.jpg" alt="">
 		    <p> We found that using a kart style physics engine and movement was much more natural to the bike and Yamaha controller style of turning. Finally, we combined the kart style racing game with a more realistic environment to create an immersive experience for the users.</p>
 		    <div class="row project-images middle-images">
 			  <div class="col-md-6 left-images">
 				<video controls class="img img-responsive" muted="muted">
-				   <source src="content/ridethru/testtrackworking.ogv" type="video/ogg">
-				   <source src="content/ridethru/testtrackworking.mp4" type="video/mp4">
+				   <source src="static/videos/ridethru_testtrackworking.ogv" type="video/ogg">
+				   <source src="static/videos/ridethru_testtrackworking.mp4" type="video/mp4">
 				   Your browser does not support the video tag.
 				</video>
 			  </div>
 			  <div class="col-md-6 right-images">
 				<video controls class="img img-responsive" muted="muted">
-				   <source src="content/ridethru/demodaylove.ogv" type="video/ogg">
-				   <source src="content/ridethru/demodaylove.mp4" type="video/mp4">
+				   <source src="static/videos/ridethru_demodaylove.ogv" type="video/ogg">
+				   <source src="static/videos/ridethru_demodaylove.mp4" type="video/mp4">
 				   Your browser does not support the video tag.
 				</video>
 			  </div>
@@ -155,18 +155,18 @@
 		  <p class="proj-section"> Putting it all together </p>
 		    <div class="row project-images">
 			  <div class="col-md-6 left-images">
-				<img class="img-responsive" src="content/ridethru/final1.jpg" alt="">	
+				<img class="img-responsive" src="static/images/ridethru/final1.jpg" alt="">	
 			  </div>
 			  <div class="col-md-6 right-images">
-				<img class="img-responsive" src="content/ridethru/final3.jpg" alt="">
+				<img class="img-responsive" src="static/images/ridethru/final3.jpg" alt="">
 			  </div>
 			</div>
-			<img class="img-responsive bot-images" src="content/ridethru/final2.jpg" alt="">
+			<img class="img-responsive bot-images" src="static/images/ridethru/final2.jpg" alt="">
 		  <hr>
 		  <p class="proj-section"> More Information </p>
 	        <div class="row">
 			  <div class="col-md-12">
-				<p> Final report can be found <a href="content/ridethru/DesignProposal.pdf">here</a>.</p>
+				<p> Final report can be found <a href="static/docs/ridethru_DesignProposal.pdf">here</a>.</p>
 				<p><a href="https://github.com/jantonso/RideThru">Github</a></p>
 			  </div>
 			</div>

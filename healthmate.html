@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/healthmate.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/projects.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/backtotop.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/backtotop.js"></script>
   </head>
   <body>
 	<!-- Navbar -->
@@ -27,7 +27,7 @@
             <li class="page-scroll"><a href="about.html">About</a></li>
             <li class="page-scroll"><a href="index.html">Projects</a></li>
             <li class="page-scroll"><a href="https://jantonso.github.io/blog">Blog</a></li>
-            <li class="page-scroll"><a href="content/resume.pdf">Resume</a></li>
+            <li class="page-scroll"><a href="static/docs/resume.pdf">Resume</a></li>
           </ul>
         </div>
       </div>
@@ -72,18 +72,18 @@
             </ol>
 			<div class="row project-images">
               <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/healthmate/mvp1.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/mvp1.png" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/healthmate/mvp3.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/mvp3.png" alt="">
               </div>
             </div>
             <div class="row project-images bot-images">
               <div class="col-md-6 left-images">
-                <img class="img-responsive" src="content/healthmate/mvp2.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/mvp2.png" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="content/healthmate/mvp4.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/mvp4.png" alt="">
               </div>
             </div>
 		  <hr>
@@ -96,7 +96,7 @@
 			  <li> <p> Worker Servers </p></li>
 			  <li> <p> Database </p></li>
             </ul>
-            <img class="img-responsive project-images middle-images" src="content/healthmate/architecture1.png" alt="">	  
+            <img class="img-responsive project-images middle-images" src="static/images/healthmate/architecture1.png" alt="">	  
 		     <p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
             <p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
 		  <hr>
@@ -109,7 +109,7 @@
 				<li><p> Passively Replicated Database</p></li>
 			</ul>
 		    <p> Our updated final architecture diagram: </p>
-			<img class="img-responsive project-images middle-images" src="content/healthmate/architecture2.png" alt="">
+			<img class="img-responsive project-images middle-images" src="static/images/healthmate/architecture2.png" alt="">
 		  <hr>
 		  <p class="proj-section"> Passively Replicated Master Server </p>
 			<p> There is one primary Master Server that actively receives requests and two backup Master Servers that are not actively receiving requests. A Request Log in the DB stores the state of user requests. </p> 
@@ -124,13 +124,13 @@
 			<p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
 			<div class="row project-images">
               <div class="col-md-4 left-images">
-                <img class="img-responsive" src="content/healthmate/db1.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/db1.png" alt="">
               </div>
               <div class="col-md-4 mid-images">
-                <img class="img-responsive" src="content/healthmate/db2.png" alt="">
+                <img class="img-responsive" src="static/images/healthmate/db2.png" alt="">
               </div>
            	  <div class="col-md-4 right-images">
-				<img class="img-responsive" src="content/healthmate/db3.png" alt="">
+				<img class="img-responsive" src="static/images/healthmate/db3.png" alt="">
 		      </div>
 			</div>
 		  <hr>	
