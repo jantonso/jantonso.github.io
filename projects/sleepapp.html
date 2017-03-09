@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/css/projects.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/projects.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/backtotop.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/backtotop.js"></script>
   </head>
   <body>
 	<!-- Navbar -->
@@ -20,14 +20,14 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand page-scroll" id="name" href="index.html"> Joshua Antonson </a>
+          <a class="navbar-brand page-scroll" id="name" href="/index.html"> Joshua Antonson </a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll"><a href="about.html">About</a></li>
-            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="/about.html">About</a></li>
+            <li class="page-scroll"><a href="/index.html">Projects</a></li>
             <li class="page-scroll"><a href="https://jantonso.github.io/blog">Blog</a></li>
-            <li class="page-scroll"><a href="static/docs/resume.pdf">Resume</a></li>
+            <li class="page-scroll"><a href="/static/docs/resume.pdf">Resume</a></li>
           </ul>
         </div>
       </div>
@@ -59,10 +59,10 @@
 			  <p> The user leaves the phone on their bed and the application records accelerometer data during sleep. The accelerometer sensor records five measurements per second: acceleration in the x, y, and z directions. Every minute, the application sends the data for the prior minute to a server running in Google App Engine, where it is stored for processing.</p>
 			<div class="row project-images middle-images">
 			  <div class="col-md-6 left-images">
-				<img class="img-responsive" src="static/images/sleepapp/sa1.png" alt="">
+				<img class="img-responsive" src="/static/images/sleepapp/sa1.png" alt="">
 			  </div>
 			  <div class="col-md-6 right-images">
-				<img class="img-responsive" src="static/images/sleepapp/sa2.png" alt="">
+				<img class="img-responsive" src="/static/images/sleepapp/sa2.png" alt="">
 			  </div>
 			</div>
 			<p class="section-header"> Identify and Detect Movements </p>
@@ -84,13 +84,13 @@
 				    <p> The following figures show the x, y, and z acc derivative values for a session where a user gets into bed, lays still for aproximately 10 seconds, and then gets out of bed. As you can see, when the user is laying still the acc derivative values remain fairly consistent and within a certain threshold. When the user gets into or out of bed, the acc derivative values exceed that threshold. </p>
 					<div class="row project-images middle-images">
 					  <div class="col-md-4 left-images">
-						<img class="img-responsive" src="static/images/sleepapp/xd.png" alt=""> 
+						<img class="img-responsive" src="/static/images/sleepapp/xd.png" alt=""> 
 					  </div>
 					  <div class="col-md-4 mid-images">
-						<img class="img-responsive" src="static/images/sleepapp/yd.png" alt="">
+						<img class="img-responsive" src="/static/images/sleepapp/yd.png" alt="">
 				      </div>
 					  <div class="col-md-4 right-images">
-						<img class="img-responsive" src="static/images/sleepapp/zd.png" alt="">
+						<img class="img-responsive" src="/static/images/sleepapp/zd.png" alt="">
 				      </div>
 					</div>
 					<li><p> For each 2 second window, the number of movement events is defined as the Movement Weight. </p></li>
@@ -109,19 +109,19 @@
 			  <p> I use the trained classifier to label each 20-minute time bin as "restless", "woke up", or "asleep" in order to give the user a better understanding of their sleep/wake pattern. </p>
 			  <div class="row project-images middle-images">
 				<div class="col-md-6 left-images">
-				  <img class="img-responsive" src="static/images/sleepapp/m1.png" alt="">
+				  <img class="img-responsive" src="/static/images/sleepapp/m1.png" alt="">
 				</div>	
 				<div class="col-md-6 right-images">			
-				  <img class="img-responsive" src="static/images/sleepapp/m2.png" alt="">
+				  <img class="img-responsive" src="/static/images/sleepapp/m2.png" alt="">
 				</div>
 			  </div>
 			<p class="section-header"> Predict Future Sleep/Wake Patterns </p>
 			  <p> I aggregate the data from each of the user's previous nights of sleep. For each of the labeled 20-minute time bins, I assign a weight of 0.0 if it was labeled as "asleep", 0.5 if it was labeled as "restless", and 4.0 if it was labeled as "woke up". Then, I calculate a Predicted Movement Value for each 20-minute index i, i.e. index 0 is the first 20 minutes of sleep, index 1 is the second 20 minutes of sleep, and so on. The Predicted Movement Value for index i is the sum of the weights of the i-th 20-minute time bins divided by the number of i-th 20-minute time bins across each night of sleep. </p>
 			  <p> I display the predicted Movement Value for each 20-minute index i to the user, which presents a good representation of their typical sleep/wake behavior and, intuitively, a good prediction of their future sleep/wake pattern.
-			<img class="img-responsive project-images" src="static/images/sleepapp/predictions1.png" alt="">
-			<img class="img-responsive project-images" src="static/images/sleepapp/predictions2.p
+			<img class="img-responsive project-images" src="/static/images/sleepapp/predictions1.png" alt="">
+			<img class="img-responsive project-images" src="/static/images/sleepapp/predictions2.p
 ng" alt="">
-			<img class="img-responsive project-images" src="static/images/sleepapp/predictions3.p
+			<img class="img-responsive project-images" src="/static/images/sleepapp/predictions3.p
 ng" alt="">
 		  <hr>
 		  <p class="proj-section"> Experimental Setup and Results </p> 
@@ -130,23 +130,23 @@ ng" alt="">
 			<p> The following figures show my attempt at detecting a user movement of rolling over from their left side to their right side. The first figure displays the x, y, and z acc derivatives with respect to time and you will notice the distinct spike that corresponds to the user's movement. The second figure shows my algorithm's attempt to identify the Movement Weights for each 2-second window of this session. The third figure shows these two overlayed on top of one another, with absolute acceleration derivative values,  and you can see that I succesfully detect the movement event.</p>
 			<div class="row project-images middle-images">
               <div class="col-md-4 left-images">
-                <img class="img-responsive" src="static/images/sleepapp/movement_left.png" alt="">
+                <img class="img-responsive" src="/static/images/sleepapp/movement_left.png" alt="">
               </div>
 			  <div class="col-md-4 mid-images">
-			    <img class="img-responsive" src="static/images/sleepapp/movement_mid.png" alt="">
+			    <img class="img-responsive" src="/static/images/sleepapp/movement_mid.png" alt="">
 			  </div>
 			  <div class="col-md-4 right-images">
-				<img class="img-responsive" src="static/images/sleepapp/movement_right.png" alt="">
+				<img class="img-responsive" src="/static/images/sleepapp/movement_right.png" alt="">
 			  </div>
             </div>
 			<p> There are a total of 670 20-minute time bins of Movement Weights from all six users comprising 32 nights worth of sleep. The training set consists of a total of 19 nights worth of data and 390 20-minute time bins. The testing set consists of a total of 13 nights worth of data and 280 20-minute time bins. Using the SVM classifier, I achieved a precision score of 0.82, a recall score of 0.84, and a f1-score of 0.82 when classifying the 20-minute time bins as "asleep", "restless", or "woke up". </p>	
 		  <hr>
 		  <p class="proj-section"> Project Timeline </p>
 			<p> This project was completed via a series of two week sprints (milestones): M1, M2, M3, M4. For each milestone, I added work towards a research paper (which grew from 2 to 8 pages) and presented my work to the class/public. </p>
-			<p> M1: <a href="static/docs/sleepapp_m1.pdf">paper</a> (2 pages) and presentation <a href="static/docs/sleepapp_m1_slides.pdf">slides</a>. </p>
-			<p> M2: presentation <a href="static/docs/sleepapp_m2_slides.pdf">slides</a>. </p>
-			<p> M3: <a href="static/docs/sleepapp_m3.pdf">paper</a> (6 pages). </p>
-			<p> M4: <a href="static/docs/sleepapp_m4.pdf">paper</a> (8 pages) and final presentation <a href="static/docs/sleepapp_poster.pdf">poster</a>. </p>
+			<p> M1: <a href="/static/docs/sleepapp_m1.pdf">paper</a> (2 pages) and presentation <a href="/static/docs/sleepapp_m1_slides.pdf">slides</a>. </p>
+			<p> M2: presentation <a href="/static/docs/sleepapp_m2_slides.pdf">slides</a>. </p>
+			<p> M3: <a href="/static/docs/sleepapp_m3.pdf">paper</a> (6 pages). </p>
+			<p> M4: <a href="/static/docs/sleepapp_m4.pdf">paper</a> (8 pages) and final presentation <a href="/static/docs/sleepapp_poster.pdf">poster</a>. </p>
 		  <hr>
 		  <p class="proj-section"> More Information </p>	
 		    <p><a href="https://github.com/jantonso/SleepApp"> Github </a></p>

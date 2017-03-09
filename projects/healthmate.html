@@ -20,14 +20,14 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand page-scroll" id="name" href="index.html"> Joshua Antonson </a>
+          <a class="navbar-brand page-scroll" id="name" href="/index.html"> Joshua Antonson </a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll"><a href="about.html">About</a></li>
-            <li class="page-scroll"><a href="index.html">Projects</a></li>
+            <li class="page-scroll"><a href="/about.html">About</a></li>
+            <li class="page-scroll"><a href="/index.html">Projects</a></li>
             <li class="page-scroll"><a href="https://jantonso.github.io/blog">Blog</a></li>
-            <li class="page-scroll"><a href="static/docs/resume.pdf">Resume</a></li>
+            <li class="page-scroll"><a href="/static/docs/resume.pdf">Resume</a></li>
           </ul>
         </div>
       </div>
@@ -72,18 +72,18 @@
             </ol>
 			<div class="row project-images">
               <div class="col-md-6 left-images">
-                <img class="img-responsive" src="static/images/healthmate/mvp1.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/mvp1.png" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="static/images/healthmate/mvp3.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/mvp3.png" alt="">
               </div>
             </div>
             <div class="row project-images bot-images">
               <div class="col-md-6 left-images">
-                <img class="img-responsive" src="static/images/healthmate/mvp2.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/mvp2.png" alt="">
               </div>
               <div class="col-md-6 right-images">
-                <img class="img-responsive" src="static/images/healthmate/mvp4.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/mvp4.png" alt="">
               </div>
             </div>
 		  <hr>
@@ -96,7 +96,7 @@
 			  <li> <p> Worker Servers </p></li>
 			  <li> <p> Database </p></li>
             </ul>
-            <img class="img-responsive project-images middle-images" src="static/images/healthmate/architecture1.png" alt="">	  
+            <img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture1.png" alt="">	  
 		     <p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
             <p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
 		  <hr>
@@ -109,7 +109,7 @@
 				<li><p> Passively Replicated Database</p></li>
 			</ul>
 		    <p> Our updated final architecture diagram: </p>
-			<img class="img-responsive project-images middle-images" src="static/images/healthmate/architecture2.png" alt="">
+			<img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture2.png" alt="">
 		  <hr>
 		  <p class="proj-section"> Passively Replicated Master Server </p>
 			<p> There is one primary Master Server that actively receives requests and two backup Master Servers that are not actively receiving requests. A Request Log in the DB stores the state of user requests. </p> 
@@ -124,13 +124,13 @@
 			<p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
 			<div class="row project-images">
               <div class="col-md-4 left-images">
-                <img class="img-responsive" src="static/images/healthmate/db1.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/db1.png" alt="">
               </div>
               <div class="col-md-4 mid-images">
-                <img class="img-responsive" src="static/images/healthmate/db2.png" alt="">
+                <img class="img-responsive" src="/static/images/healthmate/db2.png" alt="">
               </div>
            	  <div class="col-md-4 right-images">
-				<img class="img-responsive" src="static/images/healthmate/db3.png" alt="">
+				<img class="img-responsive" src="/static/images/healthmate/db3.png" alt="">
 		      </div>
 			</div>
 		  <hr>	
