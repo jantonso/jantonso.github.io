@@ -1,155 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/projects.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/backtotop.js"></script>
-  </head>
-  <body>
-	<!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-          <a class="navbar-brand page-scroll" id="name" href="/index.html"> Joshua Antonson </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-main-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll"><a href="/about.html">About</a></li>
-            <li class="page-scroll"><a href="/index.html">Projects</a></li>
-            <li class="page-scroll"><a href="/static/docs/resume.pdf" target="_blank">Resume</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-	<!-- Intro Header -->
-	<header class="intro" id="page-content">
-	  <div class="intro-body">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-6 col-md-offset-3">
-			  <h1 id="proj-name">HealthMate </h1>
-			  <p id="proj-desc"> Personal Health Record Aggregation Web Service </p>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/projects.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/backtotop.js"></script>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand page-scroll" id="name" href="/index.html"> Joshua Antonson </a>
+				</div>
+				<div class="collapse navbar-collapse navbar-main-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="page-scroll"><a href="/about.html">About</a></li>
+						<li class="page-scroll"><a href="/index.html">Projects</a></li>
+						<li class="page-scroll"><a href="/static/docs/resume.pdf" target="_blank">Resume</a></li>
+					</ul>
+				</div>
 			</div>
-		  </div>
-		</div>
-	  </div>
-	</header>
-
-    <!-- Page Content -->
-    <div class="container" id="proj-content">
-      <div class="row">
-		<div class="col-md-10 col-md-offset-1">
-		  <p> HealthMate automates the task of contacting, collecting, and storing a patients up-to-date medical history. This allows users to manage their data independently, without risks of losing it, and leads to increased patient awareness and better health service.
-		  <p> This project was completed for the class 18749: Building Reliable Distributed Systems. </p>
-		  <hr>
-		  <p class="proj-section"> Functional Requirements </p>
-		    <p> Our web service provides two key features for users: </p>
-			<ol>
-              <li> <p>Submitting Requests to Medical Providers for Information </p></li>
-                <ul>
-                  <li> <p>Select a provider from a list of hospitals </p></li>
-                  <li> <p>Enter account credentials for that medical provider's patient portal website</p> </li>
-                  <li> <p>Automatically parse patient portal website to retrieve medical records </p></li>
-                  <li> <p>Store medical records in DB</p></li>
-                </ul>
-              <li> <p>Interacting w/ medical information </p></li>
-                <ul>
-                  <li> <p>User can view past medical records across multiple hospitals or organizations</p></li>
-                  <li> <p>User can update his medical records </p></li>
-                </ul>
-            </ol>
-			<div class="row project-images">
-              <div class="col-md-6 left-images">
-                <img class="img-responsive" src="/static/images/healthmate/mvp1.png" alt="">
-              </div>
-              <div class="col-md-6 right-images">
-                <img class="img-responsive" src="/static/images/healthmate/mvp3.png" alt="">
-              </div>
-            </div>
-            <div class="row project-images bot-images">
-              <div class="col-md-6 left-images">
-                <img class="img-responsive" src="/static/images/healthmate/mvp2.png" alt="">
-              </div>
-              <div class="col-md-6 right-images">
-                <img class="img-responsive" src="/static/images/healthmate/mvp4.png" alt="">
-              </div>
-            </div>
-		  <hr>
-		  <p class="proj-section"> Initial Architecture </p>
-            <p> We decided to use the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack and decided to use AWS for our hosting. </p>
-			<p> Our initial system architecture consisted of four key components. </p>
-            <ul>
-              <li> <p> Front-End Web Server </p></li>
-              <li> <p> Master Server </p></li>
-			  <li> <p> Worker Servers </p></li>
-			  <li> <p> Database </p></li>
-            </ul>
-            <img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture1.png" alt="">	  
-		     <p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
-            <p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
-		  <hr>
-	  	  <p class="proj-section"> Fault Tolerance </p>
-			<p> The next step was to update our architecture to make the system fault tolerant to message loss and OS/Process crashes. </p>
-			<p> We focused on ensuring fault tolerance at three out of our four key components in our initial architecture. </p>
-			<ul>
-				<li><p> Passively Replicated Master Server</p></li>
-			    <li><p> Stateless Worker Servers</p></li>
-				<li><p> Passively Replicated Database</p></li>
-			</ul>
-		    <p> Our updated final architecture diagram: </p>
-			<img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture2.png" alt="">
-		  <hr>
-		  <p class="proj-section"> Passively Replicated Master Server </p>
-			<p> There is one primary Master Server that actively receives requests and two backup Master Servers that are not actively receiving requests. A Request Log in the DB stores the state of user requests. </p> 
-			<p> A Coordinator Server manages the primary and backup Master Servers. It receives requests from the Web Server and forwards them to the primary Master Server. Every 5 seconds, the coordinator checks the health status of the primary Master Server. If it detects that the primary Master Server has crashed, it elects one of the backup Master Servers to be primary and notifies both backup Master Servers of the reelection process. </p>
-			<p> The new primary Master Server reads the Request Log and retries all unfinished requests. The Coordinator Server now forwards all requests to the new primary Master Server and our system is back to a consistent state. </p> 
-		  <hr>
-		  <p class="proj-section"> Stateless Worker Servers </p>
-		 	<p> We kept our Worker Servers completely stateless to ensure fault tolerance. All of the Worker Servers are completely identical and their sole function is to perform the scraping of medical records. If one of the Worker Server crashes during a scrape request, the Master Server will detect this and retry the scrape request with another Worker Server that is randomly elected. Because of this, we can easily spin up/down Worker Servers as needed based on demand.</p> 
-		  <hr>
-		  <p class="proj-section"> Passively Replicated Database </p>
-			<p> We have a passively replicated database with one Primary Node, and two Backup Nodes in a MongoDB replica set to ensure redundancy and increase data availability. The Primary Node records all changes in an operation log. The Backup Nodes replicate this operation log asynchronously and apply data operations to ensure that they match the Primary Node. </p> 
-			<p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
-			<div class="row project-images">
-              <div class="col-md-4 left-images">
-                <img class="img-responsive" src="/static/images/healthmate/db1.png" alt="">
-              </div>
-              <div class="col-md-4 mid-images">
-                <img class="img-responsive" src="/static/images/healthmate/db2.png" alt="">
-              </div>
-           	  <div class="col-md-4 right-images">
-				<img class="img-responsive" src="/static/images/healthmate/db3.png" alt="">
-		      </div>
+		</nav>
+		<!-- Intro Header -->
+		<header class="intro" id="page-content">
+			<div class="intro-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<h1 id="proj-name">HealthMate </h1>
+							<p id="proj-desc"> Personal Health Record Aggregation Web Service </p>
+						</div>
+					</div>
+				</div>
 			</div>
-		  <hr>	
-		  <p class="proj-section"> More Information </p>
-	        <p> Sorry, but we are not actively running the web service due to AWS costs. </p>
-			<p><a href="https://github.com/jantonso/healthmate" target="_blank">Github </a></p>
-			<p> Homepage image taken from <a href="http://all-free-download.com/free-vector/download/health_care_design_concept_6816968.html" target="_blank"> here</a>. </p>
-		  <div class="row" id="to-top">
-            <div class="col-md-5" id="left-hr">
-              <hr>
-            </div>
-            <div class="col-md-2">
-              <p><a href="#" class="back-to-top">Back to Top </a></p>
-            </div>
-            <div class="col-md-5" id="right-hr">
-              <hr>
-            </div>
-          </div>
-		</div>
-	  </div>
-    </div>   
-  </body>
+		</header>
+		<!-- Page Content -->
+		<div class="container" id="proj-content">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<p> HealthMate automates the task of contacting, collecting, and storing a patients up-to-date medical history. This allows users to manage their data independently, without risks of losing it, and leads to increased patient awareness and better health service.
+					<p> This project was completed for the class 18749: Building Reliable Distributed Systems. </p>
+					<hr>
+					<p class="proj-section"> Functional Requirements </p>
+					<p> Our web service provides two key features for users: </p>
+					<ol>
+						<li><p>Submitting Requests to Medical Providers for Information </p></li>
+						<ul>
+							<li> <p>Select a provider from a list of hospitals </p></li>
+							<li> <p>Enter account credentials for that medical provider's patient portal website</p> </li>
+							<li> <p>Automatically parse patient portal website to retrieve medical records </p></li>
+							<li> <p>Store medical records in DB</p></li>
+						</ul>
+						<li> <p>Interacting w/ medical information </p></li>
+						<ul>
+							<li> <p>User can view past medical records across multiple hospitals or organizations</p></li>
+							<li> <p>User can update his medical records </p></li>
+						</ul>
+					</ol>
+					<div class="row project-images">
+						<div class="col-md-6 left-images">
+							<img class="img-responsive" src="/static/images/healthmate/mvp1.png" alt="">
+						</div>
+						<div class="col-md-6 right-images">
+							<img class="img-responsive" src="/static/images/healthmate/mvp3.png" alt="">
+						</div>
+					</div>
+					<div class="row project-images bot-images">
+						<div class="col-md-6 left-images">
+							<img class="img-responsive" src="/static/images/healthmate/mvp2.png" alt="">
+						</div>
+						<div class="col-md-6 right-images">
+							<img class="img-responsive" src="/static/images/healthmate/mvp4.png" alt="">
+						</div>
+					</div>
+					<hr>
+					<p class="proj-section"> Initial Architecture </p>
+								<p> We decided to use the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack and decided to use AWS for our hosting. </p>
+					<p> Our initial system architecture consisted of four key components. </p>
+					<ul>
+						<li> <p> Front-End Web Server </p></li>
+						<li> <p> Master Server </p></li>
+						<li> <p> Worker Servers </p></li>
+						<li> <p> Database </p></li>
+					</ul>
+					<img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture1.png" alt="">		
+					<p> The Master Server manages the state of user requests and forwards the requests to one of the Worker Servers. The Worker Server performs the scraping and notifies the Master Server when it is complete. </p>
+					<p> We implemented the automatic scraping of health records from UPMC's web portal using Nightmare.JS, which is a headless web scraper built for NodeJS. </p>
+					<hr>
+					<p class="proj-section"> Fault Tolerance </p>
+					<p> The next step was to update our architecture to make the system fault tolerant to message loss and OS/Process crashes. </p>
+					<p> We focused on ensuring fault tolerance at three out of our four key components in our initial architecture. </p>
+					<ul>
+						<li><p> Passively Replicated Master Server</p></li>
+						<li><p> Stateless Worker Servers</p></li>
+						<li><p> Passively Replicated Database</p></li>
+					</ul>
+					<p> Our updated final architecture diagram: </p>
+					<img class="img-responsive project-images middle-images" src="/static/images/healthmate/architecture2.png" alt="">
+					<hr>
+					<p class="proj-section"> Passively Replicated Master Server </p>
+					<p> There is one primary Master Server that actively receives requests and two backup Master Servers that are not actively receiving requests. A Request Log in the DB stores the state of user requests. </p> 
+					<p> A Coordinator Server manages the primary and backup Master Servers. It receives requests from the Web Server and forwards them to the primary Master Server. Every 5 seconds, the coordinator checks the health status of the primary Master Server. If it detects that the primary Master Server has crashed, it elects one of the backup Master Servers to be primary and notifies both backup Master Servers of the reelection process. </p>
+					<p> The new primary Master Server reads the Request Log and retries all unfinished requests. The Coordinator Server now forwards all requests to the new primary Master Server and our system is back to a consistent state. </p> 
+					<hr>
+					<p class="proj-section"> Stateless Worker Servers </p>
+				 	<p> We kept our Worker Servers completely stateless to ensure fault tolerance. All of the Worker Servers are completely identical and their sole function is to perform the scraping of medical records. If one of the Worker Server crashes during a scrape request, the Master Server will detect this and retry the scrape request with another Worker Server that is randomly elected. Because of this, we can easily spin up/down Worker Servers as needed based on demand.</p> 
+					<hr>
+					<p class="proj-section"> Passively Replicated Database </p>
+					<p> We have a passively replicated database with one Primary Node, and two Backup Nodes in a MongoDB replica set to ensure redundancy and increase data availability. The Primary Node records all changes in an operation log. The Backup Nodes replicate this operation log asynchronously and apply data operations to ensure that they match the Primary Node. </p> 
+					<p> If the Primary Node crashes, this is detected by the rest of the members in the replica set. This triggers a reelection process and a new node is elected to be Primary. </p>
+					<div class="row project-images">
+						<div class="col-md-4 left-images">
+							<img class="img-responsive" src="/static/images/healthmate/db1.png" alt="">
+						</div>
+						<div class="col-md-4 mid-images">
+							<img class="img-responsive" src="/static/images/healthmate/db2.png" alt="">
+						</div>
+				 		<div class="col-md-4 right-images">
+							<img class="img-responsive" src="/static/images/healthmate/db3.png" alt="">
+						</div>
+					</div>
+					<hr>	
+					<p class="proj-section"> More Information </p>
+					<p> Sorry, but we are not actively running the web service due to AWS costs. </p>
+					<p><a href="https://github.com/jantonso/healthmate" target="_blank">Github </a></p>
+					<p> Homepage image taken from <a href="http://all-free-download.com/free-vector/download/health_care_design_concept_6816968.html" target="_blank"> here</a>. </p>
+					<div class="row" id="to-top">
+						<div class="col-md-5" id="left-hr">
+							<hr>
+						</div>
+						<div class="col-md-2">
+							<p><a href="#" class="back-to-top">Back to Top </a></p>
+						</div>
+						<div class="col-md-5" id="right-hr">
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	 
+	</body>
 </html>
