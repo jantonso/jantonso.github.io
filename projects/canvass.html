@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/projects.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/backtotop.js"></script>
+  </head>
+  <body>
+	<!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-container" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand page-scroll" id="name" href="/index.html"> Joshua Antonson </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="page-scroll"><a href="/about.html">About</a></li>
+            <li class="page-scroll"><a href="/index.html">Projects</a></li>
+            <li class="page-scroll"><a href="/static/docs/resume.pdf" target="_blank">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<!-- Intro Header -->
+	<header class="intro" id="page-content">
+	  <div class="intro-body">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			  <h1 id="proj-name">Canvass</h1>
+			  <p id="proj-desc">A hyper-localized, anonymous Q&A app</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+    <!-- Page Content -->
+    <div class="container" id="proj-content">
+      <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		  <p>Canvass is a location based social app to anonymous express yourself freely and to gain statistical insights into the thoughts & opinions of your various communities. Through asking and answering open-ended, multiple choice, and yes/no questions you can see the aggregated opinion of the people around you.
+		  <p>To date, Canvass has been downloaded by over 1700 users, who asked nearly 9300 questions, responded with over 214,000 answers, voiced 5,500 comments, and upvoted/downvoted content more than 28,000 times.</p>
+			<div class="row project-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="/static/images/canvass/canvass1.jpeg" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="/static/images/canvass/canvass2.jpeg" alt="">
+              </div>
+            </div>
+            <div class="row project-images bot-images">
+              <div class="col-md-6 left-images">
+                <img class="img-responsive" src="/static/images/canvass/canvass3.jpeg" alt="">
+              </div>
+              <div class="col-md-6 right-images">
+                <img class="img-responsive" src="/static/images/canvass/canvass4.jpeg" alt="">
+              </div>
+            </div>
+		  <hr>
+		  <p class="proj-section"> Tech Stack </p>
+            <p>Canvass is a cross-platform mobile app built using the Ionic framework and AngularJS. We used Adobe Phonegap Build for the build process and OneSignal for multi-platform push notifications.</p>
+			<p> For the backend, our REST API was built in Java on Google App Engine. We used Google Cloud SQL as our datastore.</p>
+		  <hr>
+		  <p class="proj-section"> More Information </p>
+	        <p>You can find the app <a href="https://itunes.apple.com/us/app/canvass-local-q-a/id1142412587?mt=8">here</a> for IOS and <a href="https://play.google.com/store/apps/details?id=com.canvass.app&hl=en">here</a> for Android.</p>
+	        <p>The Github repos for this project are currently private, but you can view our landing page <a href="http://canvass.qa/">here</a>.</p>
+		  <div class="row" id="to-top">
+            <div class="col-md-5" id="left-hr">
+              <hr>
+            </div>
+            <div class="col-md-2">
+              <p><a href="#" class="back-to-top">Back to Top </a></p>
+            </div>
+            <div class="col-md-5" id="right-hr">
+              <hr>
+            </div>
+          </div>
+		</div>
+	  </div>
+    </div>   
+  </body>
+</html>
