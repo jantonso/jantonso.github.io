@@ -183,8 +183,6 @@ hr {
 	#to-top #right-hr hr {margin-top: 30px;}
 	.left-images {padding-right: 5px;}
 	.right-images {padding-left: 5px;}
-	.left-images-3-col {padding-right: 2.5px;}
-	.right-images-3-col {padding-left: 2.5px;}
 	.bot-images {margin-top: 10px;}
-	.mid-images {padding-left: 7.5px;padding-right: 7.5px;}
+	.mid-images {padding-left: 10px; padding-right: 10px;}
 }
