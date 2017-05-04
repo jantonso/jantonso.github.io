@@ -177,7 +177,7 @@ hr {
 /* Tablet and desktop */
 @media (min-width:641px) {
 	#nav-container #name {font-size: 2em; padding-left: 0;}
-	#proj-name {font-size: 2.50em;}
+	#proj-name {font-size: 2.40em;}
 	#to-top #left-hr {padding-right: 0;}
 	#to-top #right-hr {padding-left: 0;}
 	#to-top #right-hr hr {margin-top: 30px;}
