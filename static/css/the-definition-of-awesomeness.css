@@ -1,6 +1,8 @@
 body {
 	background-color: #EEECE7;
 	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+
 }
 
 #nav-container {
@@ -11,7 +13,6 @@ body {
 
 #nav-container #name {
 	color: #43CC94;
-	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	margin: 0;
 }
@@ -34,7 +35,6 @@ body {
 #nav-container li a {
 	color: #43CC94;
 	font-size: 1.2em;
-	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 }
 
@@ -51,6 +51,17 @@ body {
 	padding-top: 80px;
 }
 
+#proj-content {
+	margin-top: 40px;
+}
+
+#proj-name {
+	text-align: center;
+    color: #43CC94;
+    font-size: 2.85em;
+    font-weight: 600;		
+}
+
 hr {
 	background-color: #43CC94;
 	color: #43CC94; 
@@ -59,7 +70,6 @@ hr {
 }
 
 p {
-	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
 
@@ -154,7 +164,7 @@ p {
     margin-left: -100px;
 }
 
-.timeline>li .timeline-image h4 {
+.timeline>li .timeline-image h3 {
     margin-top: 12px;
     font-size: 10px;
     line-height: 14px;
@@ -184,24 +194,14 @@ p {
     margin-bottom: 0;
 }
 
-.timeline .timeline-heading h4 {
+.timeline .timeline-heading h3 {
 	margin-top:22px;
     margin-bottom: 4px;
     padding:0;
-    color: #b3b3b3;
+	color: #43CC94;
+	font-weight: 600;
 }
 
-.timeline .timeline-heading h4.subheading {
-  padding:0;
-    text-transform: none;
-    font-size:18px;
-    color:#333333;
-}
-
-.timeline .timeline-body>p,
-.timeline .timeline-body>ul {
-    color:#808080;
-}
 /*Style for even div.line*/
 .timeline>li:nth-child(odd) .line:before {
     content: "";
