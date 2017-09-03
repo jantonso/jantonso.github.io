@@ -2,7 +2,6 @@ body {
 	background-color: #EEECE7;
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
-
 }
 
 #nav-container {
@@ -71,6 +70,7 @@ hr {
 
 p {
 	font-weight: 400;
+	font-size: 1.0em;
 }
 
 @media (min-width:320px) {
@@ -164,12 +164,6 @@ p {
     margin-left: -100px;
 }
 
-.timeline>li .timeline-image h3 {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 14px;
-}
-
 .timeline>li.timeline-inverted>.timeline-panel {
     float: right;
     padding: 0 30px 20px 20px;
@@ -199,6 +193,7 @@ p {
     margin-bottom: 4px;
     padding:0;
 	color: #43CC94;
+    font-size: 1.7em;
 	font-weight: 600;
 }
 
