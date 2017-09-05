@@ -154,7 +154,7 @@ hr {
 
 /* Mobile portrait */
 @media (min-width:320px) and (max-width:480px){
-	#nav-container #name {font-size: 1.75em;}
+	#nav-container #name {font-size: 1.50em;}
 	#proj-name {font-size: 2.2em;}
 	#to-top #right-hr hr {margin-top: 20px;}
 	.bot-images {margin-top: 20px;}

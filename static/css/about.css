@@ -83,7 +83,7 @@ p {
 }
 
 @media (min-width:320px) {
-    #nav-container #name {font-size: 1.75em;}
+    #nav-container #name {font-size: 1.50em;}
 	#intro-name {margin-top: 15px;}
 	#page-content #github {margin-bottom: 20px;}
 }
